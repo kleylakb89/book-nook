@@ -82,7 +82,18 @@ router.post('/logout', (req, res) => {
 });
 //get all users?
 
-//get a specific user?
+router.get('/', (req, res) => {
+    User.findAll({
+            attributes: {
+                exclude: ['password']
+            }
+        })
+        .then(dbUserData => res.json(dbUserData))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
 
 
 
