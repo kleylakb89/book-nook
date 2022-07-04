@@ -1,0 +1,33 @@
+{
+  "name": "book-nook",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kleylakb89/book-nook.git"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "dotenv": "^16.0.1",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.21.2",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0",
+    "express-session": "^1.17.1",
+    "connect-session-sequelize": "^7.0.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.18"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kleylakb89/book-nook/issues"
+  },
+  "homepage": "https://github.com/kleylakb89/book-nook#readme"
+}
