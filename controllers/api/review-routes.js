@@ -70,7 +70,7 @@ router.get('/', withAuth, (req, res) => {
 });
 
 //get a single review
-//mayeb include other models?
+
 
 
 
