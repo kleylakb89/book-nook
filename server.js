@@ -13,12 +13,12 @@ const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const sess = {
-    cookie: {},
-    resave: false,
-    saveUninitialized: true,
-    store: new SequelizeStore({
-        db: sequelize,
-    })
+  cookie: {},
+  resave: false,
+  saveUninitialized: true,
+  store: new SequelizeStore({
+    db: sequelize,
+  })
 };
 
 app.engine('handlebars', hbs.engine);
@@ -33,7 +33,7 @@ app.use(routes);
 
 
 sequelize.sync({ force: false }).then(() => {
-    app.listen(PORT, () => {
-        console.log(`Listening at http://localhost:${PORT}`)
-    });
+  app.listen(PORT, () => {
+    console.log(`Listening at http://localhost:${PORT}`);
+  });
 });

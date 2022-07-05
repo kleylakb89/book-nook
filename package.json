@@ -5,7 +5,9 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "db:create": "node config/init.js"
+    "db:create": "node config/init.js",
+    "lint": "npx eslint **/*.js",
+    "lint:fix": "npx eslint **/*.js --fix"
   },
   "repository": {
     "type": "git",
@@ -13,15 +15,16 @@
   },
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "connect-session-sequelize": "^7.0.4",
     "dotenv": "^16.0.1",
-    "mysql2": "^2.3.3",
-    "sequelize": "^6.21.2",
     "express": "^4.17.1",
     "express-handlebars": "^5.2.0",
     "express-session": "^1.17.1",
-    "connect-session-sequelize": "^7.0.4"
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.21.2"
   },
   "devDependencies": {
+    "eslint": "^8.19.0",
     "nodemon": "^2.0.18"
   },
   "keywords": [],
