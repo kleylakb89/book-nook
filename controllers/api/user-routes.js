@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Book, Favorite, Genre, Review, Shelf, User } = require('../../models');
+const { Book, Favorite, Genre, Review, User } = require('../../models');
 
 //create a user and log in
 
