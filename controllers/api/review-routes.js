@@ -52,6 +52,14 @@ router.delete('/:id', withAuth, (req, res) => {
 });
 
 //get all reviews
+router.get('/', withAuth, (req, res) => {
+    Review.findAll()
+    .then((dbReviewData) => res.json(dbReviewData))
+    .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
 
 //get a single review
 

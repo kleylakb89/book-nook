@@ -26,11 +26,19 @@ router.delete('/:id', withAuth, (req, res) => {
 });
 
 //view all books
+router.get('/', withAuth, (req, res) => {
+    Book.findAll()
+    .then((dbBookData) => res.json(dbBookData))
+    .catch((err) => {
+        console.log(err)
+        res.status(500).json(err);
+    });
+});
 
 //view a single book 
 
 //update a book
-//need to update
+
 
 
 
