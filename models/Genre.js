@@ -2,10 +2,10 @@ const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection.js');
 
-class User extends Model {}
+class Genre extends Model {}
 
-// user
-User.init(
+// genre
+Genre.init(
     {
       id: {
         type: DataTypes.INTEGER,
@@ -14,26 +14,18 @@ User.init(
         autoIncrement: true,
       },
   
-      username: {
+      name: {
         type: DataTypes.STRING,
         allowNull: false,
       },
 
-      email: {
-        type: DataTypes.STRING,
+      book_id: {
+        type: DataTypes.INTEGER,
         allowNull: false,
-        unique: true,
-        validate: {
-          isEmail: true,
-        },
-      },
-
-      password: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-          len: [6],
-        },
+        references: {
+            model: 'book',
+            key: 'id'
+        }
       },
     },
     {
@@ -41,8 +33,8 @@ User.init(
       timestamps: false,
       freezeTableName: true,
       underscored: true,
-      modelName: 'user',
+      modelName: 'genre',
     }
   );
 
-module.exports = User;
+module.exports = Genre;
