@@ -69,7 +69,6 @@ router.get('/', withAuth, (req, res) => {
     });
 });
 
-//get a single review
 
 
 
