@@ -3,7 +3,15 @@ const { Book, Genre, Review, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 //create a review
-
+router.post('/', withAuth, (req, res) => {
+  console.log('creating');
+  Review.create({
+    rating: req.body.rating,
+    text: req.body.text,
+    user_id: req.session.user_id,
+    book_id: req.body.book_id
+  })
+})
 //update a review
 router.put('./:id', withAuth, (req, res) => {
   Review.update({
@@ -53,11 +61,11 @@ router.delete('/:id', withAuth, (req, res) => {
 
 //get all reviews
 router.get('/', withAuth, (req, res) => {
-    Review.findAll()
+  Review.findAll()
     .then((dbReviewData) => res.json(dbReviewData))
     .catch((err) => {
-        console.log(err);
-        res.status(500).json(err);
+      console.log(err);
+      res.status(500).json(err);
     });
 });
 
