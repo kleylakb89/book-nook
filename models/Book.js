@@ -32,7 +32,7 @@ Book.init(
     favorite: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
-      defaultValue: 'false',
+      defaultValue: false,
     },
 
     user_id: {

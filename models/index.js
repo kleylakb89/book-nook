@@ -16,10 +16,6 @@ Genre.hasMany(Book, {
   foreignKey: 'genre_id',
 });
 
-Book.belongsTo(Genre, {
-  foreignKey: 'genre_id',
-});
-
 User.hasMany(Review, {
   foreignKey: 'user_id',
 });
