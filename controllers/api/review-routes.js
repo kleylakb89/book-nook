@@ -12,7 +12,7 @@ router.post('/', withAuth, (req, res) => {
     book_id: req.body.book_id
   })
 })
-//update a review
+//update a review//
 router.put('./:id', withAuth, (req, res) => {
   Review.update({
     rating: req.body.rating,
@@ -70,6 +70,7 @@ router.get('/', withAuth, (req, res) => {
 });
 
 //get a single review
+//mayeb include other models?
 
 
 
