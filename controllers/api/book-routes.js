@@ -5,29 +5,29 @@ const withAuth = require('../../utils/auth');
 
 //delete a book
 router.delete('/:id', withAuth, (req, res) => {
-    Book.destroy({
-        where: {
-            id: req.params.id,
-        },
-    })
+  Book.destroy({
+    where: {
+      id: req.params.id,
+    },
+  })
     .then((dbBookData) => {
-        if (!dbBookData) {
-            res.status(404).json({
-                message: 'No review found with this id'
-            });
-            return;
-        }
-        res.json(dbBookData);
+      if (!dbBookData) {
+        res.status(404).json({
+          message: 'No review found with this id'
+        });
+        return;
+      }
+      res.json(dbBookData);
     })
     .catch((err) => {
-        console.log(err);
-        res.status(500).json(err);
+      console.log(err);
+      res.status(500).json(err);
     });
 });
 
 //view all books
 
-//view a single book 
+//view a single book
 
 //update a book
 //need to update

@@ -6,48 +6,48 @@ const withAuth = require('../../utils/auth');
 
 //update a review
 router.put('./:id', withAuth, (req, res) => {
-    Review.update({
-        rating: req.body.rating,
-        text: req.body.text,
-    }, {
-        where: {
-            id: req.params.id,
-        },
-    })
+  Review.update({
+    rating: req.body.rating,
+    text: req.body.text,
+  }, {
+    where: {
+      id: req.params.id,
+    },
+  })
     .then((dbReviewData) => {
-        if(!dbReviewData) {
-            res.status(404).json({
-                message: 'No review found with this id'
-            });
-            return;
-        }
-        res.json(dbReviewData);
+      if(!dbReviewData) {
+        res.status(404).json({
+          message: 'No review found with this id'
+        });
+        return;
+      }
+      res.json(dbReviewData);
     })
     .catch((err) => {
-        console.log(err);
-        res.status(500).json(err);
+      console.log(err);
+      res.status(500).json(err);
     });
 });
 
 //delete a review
 router.delete('/:id', withAuth, (req, res) => {
-    Review.destroy({
-        where: {
-            id: req.params.id,
-        },
-    })
+  Review.destroy({
+    where: {
+      id: req.params.id,
+    },
+  })
     .then((dbReviewData) => {
-        if (!dbReviewData) {
-            res.status(404).json({
-                message: 'No review found with this id'
-            });
-            return;
-        }
-        res.json(dbReviewData);
+      if (!dbReviewData) {
+        res.status(404).json({
+          message: 'No review found with this id'
+        });
+        return;
+      }
+      res.json(dbReviewData);
     })
     .catch((err) => {
-        console.log(err);
-        res.status(500).json(err);
+      console.log(err);
+      res.status(500).json(err);
     });
 });
 
