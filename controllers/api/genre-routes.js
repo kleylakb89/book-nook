@@ -11,9 +11,9 @@ router.post('/', withAuth, (req, res) => {
   });
 });
 
-//get all books by genre
+//get all books in a genre
 
-//update a books genre
+
 
 //get all genres
 router.get('/', withAuth, (req, res) => {
