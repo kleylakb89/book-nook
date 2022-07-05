@@ -7,6 +7,14 @@ const withAuth = require('../../utils/auth');
 //update a books genre
 
 //get all genres
+router.get('/', withAuth, (req, res) => {
+    Genre.findAll()
+    .then((dbGenreData) => res.json(dbGenreData))
+    .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
 
 
 
