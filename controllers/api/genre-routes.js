@@ -6,6 +6,7 @@ const withAuth = require('../../utils/auth');
 
 //update a books genre
 
+//get all genres
 
 
 
