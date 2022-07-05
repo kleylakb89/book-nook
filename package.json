@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "db:create": "node config/init.js",
     "lint": "npx eslint **/*.js",
-    "lint:fix": "npx eslint **/*.js --fix"
+    "lint:fix": "npx eslint **/*.js --fix",
+    "seed": "node seeds/seed.js"
   },
   "repository": {
     "type": "git",
