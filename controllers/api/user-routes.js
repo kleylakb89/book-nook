@@ -6,12 +6,15 @@ const { Book, Favorite, Genre, Review, Shelf, User } = require('../../models');
 router.post('/', (req, res) => {
     User.create({
             username: req.body.username,
+            email: req.body.email,
             password: req.body.password
         })
         .then(dbUserData => {
             req.session.save(() => {
                 req.session.user_id = dbUserData.id;
                 req.session.username = dbUserData.username;
+                req.session.email = dbEmailData.email;
+                req.session.password= dbPasswordData.password;
                 req.session.loggedIn = true;
 
                 res.json(dbUserData);
@@ -40,6 +43,8 @@ router.post('/login', (req, res) => {
             req.session.save(() => {
                 req.session.user_id = dbUserData.id;
                 req.session.username = dbUserData.username;
+                req.session.email = dbEmailData.email;
+                req.session.password= dbPasswordData.password;
                 req.session.loggedIn = true;
 
                 res.json({
@@ -60,6 +65,8 @@ router.post('/login', (req, res) => {
             req.session.save(() => {
                 req.session.user_id = dbUserData.id;
                 req.session.username = dbUserData.username;
+                req.session.email = dbEmailData.email;
+                req.session.password= dbPasswordData.password;
                 req.session.loggedIn = true;
 
                 res.json({
