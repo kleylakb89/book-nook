@@ -14,10 +14,7 @@
    font-family: 'Montserrat', sans-serif;
    height: 100vh;
    margin: -20px 0 50px;
-   /* background-image: url("./images/Depositphotos_18327821_XL.jpg");
-   background-size: 50%;
-   background-position: 1100px 30px;
-   background-repeat: no-repeat; */
+  
    
  }
  
@@ -34,7 +31,6 @@
    padding-bottom: 8px;
    border-radius: 50px;
    margin-bottom: 2%;
-   /* opacity: .7; */
  
  }
  
@@ -250,7 +246,7 @@
  
  
  
- /* big break big break big break */
+ /*scrolling texts begin here and are kinda mid so we might remove*/
  
  
  #scroll-container {
@@ -294,6 +290,10 @@
    -webkit-animation: my-animation 25s linear infinite;
    animation: my-animation 25s linear infinite;
  }
+
+
+
+ /* scrolling words ends here*/
  
  /* for Firefox */
  @-moz-keyframes my-animation {
