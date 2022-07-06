@@ -7,20 +7,20 @@ router.post('/', (req, res) => {
   User.create({
     username: req.body.username,
     email: req.body.email,
-    password: req.body.password
+    password: req.body.password,
   })
-    .then(dbUserData => {
+    .then((userData) => {
       req.session.save(() => {
-        req.session.user_id = dbUserData.id;
-        req.session.username = dbUserData.username;
-        req.session.email = dbUserData.email;
-        req.session.password= dbUserData.password;
+        req.session.user_id = userData.id;
+        req.session.username = userData.username;
+        req.session.email = userData.email;
+        req.session.password = userData.password;
         req.session.loggedIn = true;
 
-        res.json(dbUserData);
+        res.json(userData);
       });
     })
-    .catch(err => {
+    .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
@@ -30,35 +30,21 @@ router.post('/', (req, res) => {
 
 // })
 
-// router.post('/login', (req, res) => {
-//   console.log('------------------------------------------------------------------------------------', req.body)
+// router.post('/login', async (req, res) => {
 //   User.findOne({
 //     where: {
-//       username: req.body.username
+//       email: req.body.email
 //     }
 //   })
-//     .then(dbUserData => {
-//       if (!dbUserData) {
+//     .then(userData => {
+//       if (!userData) {
 //         res.status(400).json({
-//           message: 'Cannot find that username!'
+//           message: 'Cannot find that email!'
 //         });
 //         return;
 //       }
 
-//       req.session.save(() => {
-//         req.session.user_id = dbUserData.id;
-//         req.session.username = dbUserData.username;
-//         req.session.email = dbEmailData.email;
-//         req.session.password= dbPasswordData.password;
-//         req.session.loggedIn = true;
-
-//         res.json({
-//           user: dbUserData,
-//           message: 'Login successful!'
-//         });
-//       });
-
-//       const validPassword = dbUserData.checkPassword(req.body.password);
+//       const validPassword = await userData.checkPassword(req.body.password);
 
 //       if (!validPassword) {
 //         res.status(400).json({
@@ -68,19 +54,53 @@ router.post('/', (req, res) => {
 //       }
 
 //       req.session.save(() => {
-//         req.session.user_id = dbUserData.id;
-//         req.session.username = dbUserData.username;
+//         req.session.user_id = userData.id;
+//         req.session.username = userData.username;
 //         req.session.email = dbEmailData.email;
 //         req.session.password= dbPasswordData.password;
 //         req.session.loggedIn = true;
 
 //         res.json({
-//           user: dbUserData,
+//           user: userData,
 //           message: 'Login successful!'
 //         });
 //       });
 //     });
 // });
+
+router.post('/login', async (req, res) => {
+  try {
+    const userData = await User.findOne({
+      where: {
+        email: req.body.email,
+      },
+    });
+
+    if (!userData) {
+      res.status(400).json({ message: 'Incorrect email. Please try again.' });
+      return;
+    }
+
+    const validPass = await userData.checkPassword(req.body.password);
+
+    if (!validPass) {
+      res
+        .status(400)
+        .json({ message: 'Incorrect password. Please try again.' });
+      return;
+    }
+
+    req.session.save(() => {
+      req.session.loggedIn = true;
+      req.session.userId = userData.id;
+
+      res.status(200).json({ user: userData, message: 'Logged in!' });
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
 
 //log out
 router.post('/logout', (req, res) => {
@@ -91,25 +111,20 @@ router.post('/logout', (req, res) => {
   } else {
     res.status(404).end();
   }
-
 });
 //get all users?
 
 router.get('/', (req, res) => {
   User.findAll({
     attributes: {
-      exclude: ['password']
-    }
+      exclude: ['password'],
+    },
   })
-    .then(dbUserData => res.json(dbUserData))
-    .catch(err => {
+    .then((userData) => res.json(userData))
+    .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
 });
-
-
-
-
 
 module.exports = router;
