@@ -30,11 +30,11 @@ router.delete('/:id', withAuth, (req, res) => {
     .then((dbBookData) => {
       if (!dbBookData) {
         res.status(404).json({
-          message: 'No review found with this id'
+          message: 'No book found with this id'
         });
         return;
       }
-      res.json(dbBookData);
+      res.redirect('/books');
     })
     .catch((err) => {
       console.log(err);
