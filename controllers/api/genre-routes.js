@@ -13,7 +13,36 @@ router.post('/', withAuth, (req, res) => {
 
 //get all books in a genre
 
+router.get('/:genre_id', withAuth, (req, res) => {
+  Book.findAll({
+    where: { 
+      genre_id: req.params.genre_id
+    },
+    include: [ 
+      {
+        model: Genre,
+        attributes: ['name'],
+      },
+    ],
 
+  })
+  .then((dbBookData) => {
+    const books = dbBookData.map((book) =>
+      book.get({
+        plain: true,
+      })
+    );
+
+    res.render('genre', {
+      books,
+      loggedIn: req.session.loggedIn,
+    });
+  })
+  .catch((err) => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+})
 
 //get all genres
 router.get('/', withAuth, (req, res) => {
