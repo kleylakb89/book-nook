@@ -22,7 +22,9 @@ router.get('/login', (req, res) => {
     return;
   }
 
-  res.render('login');
+  res.render('login',{
+    style: 'login.css',
+  });
 });
 
 // router.get('*', (req, res) => {
