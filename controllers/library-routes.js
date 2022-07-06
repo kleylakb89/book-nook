@@ -1,31 +1,31 @@
-const router = require("express").Router();
-const sequelize = require("../config/connection");
+const router = require('express').Router();
+const sequelize = require('../config/connection');
 const { Book, Review, User } = require('../models');
 
-router.get("/", (req, res) => {
+router.get('/', (req, res) => {
   Book.findAll({
     attributes: [
-      "id",
-      "title",
-      "author",
-      "has_read",
-      "favorite",
-      "user_id",
-      "genre_id",
-      "review_id",
+      'id',
+      'title',
+      'author',
+      'has_read',
+      'favorite',
+      'user_id',
+      'genre_id',
+      'review_id',
     ],
     include: [
       {
         model: Review,
-        attributes: ["id", "rating", "text", "user_id", "book_id"],
+        attributes: ['id', 'rating', 'text', 'user_id', 'book_id'],
         include: {
           model: User,
-          attributes: ["username"],
+          attributes: ['username'],
         },
       },
       {
         model: User,
-        attributes: ["username"],
+        attributes: ['username'],
       },
     ],
   })
@@ -36,7 +36,7 @@ router.get("/", (req, res) => {
         })
       );
 
-      res.render("main", {
+      res.render('home', {
         books,
         loggedIn: req.session.loggedIn,
       });
@@ -48,17 +48,17 @@ router.get("/", (req, res) => {
 });
 
 
-router.get("/login", (req, res) => {
+router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect("/");
+    res.redirect('/');
     return;
   }
 
-  res.render("login");
+  res.render('login');
 });
 
-router.get("*", (req, res) => {
-  res.status(404).send("Can't go there!");
+router.get('*', (req, res) => {
+  res.status(404).send('Can\'t go there!');
 });
 module.exports = router;
 
