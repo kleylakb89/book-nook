@@ -123,7 +123,7 @@ router.get('/books', (req, res) => {
         })
       );
 
-      res.render('favorites', {
+      res.render('books', {
         books,
         style: 'all-books.css',
         loggedIn: req.session.loggedIn,
@@ -170,7 +170,7 @@ router.get('/favorites', (req, res) => {
         })
       );
 
-      res.render('books', {
+      res.render('favorites', {
         books,
         style: 'all-books.css',
         loggedIn: req.session.loggedIn,
