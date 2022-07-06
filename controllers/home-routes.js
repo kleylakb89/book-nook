@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
 router.get('/', (req, res) => {
-    // res.render('home')
+  // res.render('home')
   if (!req.session.loggedIn) {
     res.redirect('login');
   } else {
@@ -10,10 +10,10 @@ router.get('/', (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-    if (req.session.loggedIn) {
-        res.redirect('/library-routes')
-    }
-    res.render('login')
+  if (req.session.loggedIn) {
+    res.redirect('/library-routes');
+  }
+  res.render('login');
 });
 
-module.exports = router
+module.exports = router;
