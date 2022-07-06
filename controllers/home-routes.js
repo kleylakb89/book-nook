@@ -110,6 +110,57 @@ router.get('/books', (req, res) => {
         model: User,
         attributes: ['username'],
       },
+      {
+        model: Genre,
+        attributes: ['name'],
+      },
+    ],
+  })
+    .then((dbBookData) => {
+      const books = dbBookData.map((book) =>
+        book.get({
+          plain: true,
+        })
+      );
+
+      res.render('favorites', {
+        books,
+        style: 'all-books.css',
+        loggedIn: req.session.loggedIn,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+// get favorites
+router.get('/favorites', (req, res) => {
+  Book.findAll({
+    where: {
+      favorite: true,
+    },
+    attributes: [
+      'id',
+      'title',
+      'author',
+      'has_read',
+      'favorite',
+    ],
+    include: [
+      {
+        model: Review,
+        attributes: ['id', 'rating', 'text', 'user_id', 'book_id'],
+        include: {
+          model: User,
+          attributes: ['username'],
+        },
+      },
+      {
+        model: User,
+        attributes: ['username'],
+      },
     ],
   })
     .then((dbBookData) => {
@@ -187,5 +238,7 @@ router.get('/books/:id', (req, res) => {
       res.status(500).json(err);
     });
 });
+
+
 
 module.exports = router;
