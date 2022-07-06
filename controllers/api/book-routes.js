@@ -85,7 +85,7 @@ router.get('/', (req, res) => {
         })
       );
 
-      res.render('home', {
+      res.render('books', {
         books,
         loggedIn: req.session.loggedIn,
       });
