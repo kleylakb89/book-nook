@@ -7,7 +7,7 @@ router.post('/', withAuth, (req, res) => {
   console.log('creating');
   Genre.create({
     name: req.body.name,
-    book_id: req.body.body
+    book_id: req.body.body,
   });
 });
 
@@ -15,47 +15,33 @@ router.post('/', withAuth, (req, res) => {
 
 router.get('/:genre_id', withAuth, (req, res) => {
   Book.findAll({
-    where: { 
-      genre_id: req.params.genre_id
+    where: {
+      genre_id: req.params.genre_id,
     },
-    include: [ 
+    include: [
       {
         model: Genre,
         attributes: ['name'],
       },
     ],
-
   })
-  .then((dbBookData) => {
-    const books = dbBookData.map((book) =>
-      book.get({
-        plain: true,
-      })
-    );
+    .then((dbBookData) => {
+      const books = dbBookData.map((book) =>
+        book.get({
+          plain: true,
+        })
+      );
 
-    res.render('genre', {
-      books,
-      loggedIn: req.session.loggedIn,
-    });
-  })
-  .catch((err) => {
-    console.log(err);
-    res.status(500).json(err);
-  });
-})
-
-//get all genres
-router.get('/', withAuth, (req, res) => {
-  Genre.findAll()
-    .then((dbGenreData) => res.json(dbGenreData))
+      res.render('genre', {
+        books,
+        loggedIn: req.session.loggedIn,
+      });
+    })
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
 });
-
-
-
 
 
 module.exports = router;

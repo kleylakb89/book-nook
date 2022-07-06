@@ -1,5 +1,7 @@
 const router = require('express').Router();
-const { Book, Review, User } = require('../models');
+const { Book, Review, User, Genre } = require('../models');
+const withAuth = require('../utils/auth');
+
 
 router.get('/', (req, res) => {
   // res.render('home')
@@ -28,6 +30,45 @@ router.get('/login', (req, res) => {
 
 //need a single-book handlebars
 //extra comment
+
+router.get('/genres', withAuth, (req, res) => {
+  Genre.findAll()
+    .then((dbGenreData) => res.json(dbGenreData))
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+router.get('/genres/:genre_id', withAuth, (req, res) => {
+  Book.findAll({
+    where: {
+      genre_id: req.params.genre_id,
+    },
+    include: [
+      {
+        model: Genre,
+        attributes: ['name'],
+      },
+    ],
+  })
+    .then((dbBookData) => {
+      const books = dbBookData.map((book) =>
+        book.get({
+          plain: true,
+        })
+      );
+
+      res.render('genre', {
+        books,
+        loggedIn: req.session.loggedIn,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
 
 
 module.exports = router;
