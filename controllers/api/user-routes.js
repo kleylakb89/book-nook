@@ -92,7 +92,7 @@ router.post('/login', async (req, res) => {
 
     req.session.save(() => {
       req.session.loggedIn = true;
-      req.session.userId = userData.id;
+      req.session.user_id = userData.id;
 
       res.status(200).json({ user: userData, message: 'Logged in!' });
     });
@@ -114,17 +114,17 @@ router.post('/logout', (req, res) => {
 });
 //get all users?
 
-router.get('/', (req, res) => {
-  User.findAll({
-    attributes: {
-      exclude: ['password'],
-    },
-  })
-    .then((userData) => res.json(userData))
-    .catch((err) => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-});
+// router.get('/', (req, res) => {
+//   User.findAll({
+//     attributes: {
+//       exclude: ['password'],
+//     },
+//   })
+//     .then((userData) => res.json(userData))
+//     .catch((err) => {
+//       console.log(err);
+//       res.status(500).json(err);
+//     });
+// });
 
 module.exports = router;

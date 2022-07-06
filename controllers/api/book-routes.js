@@ -41,7 +41,7 @@ router.delete('/:id', withAuth, (req, res) => {
     });
 });
 
-//view all books
+// view all books
 // router.get('/', withAuth, (req, res) => {
 //   Book.findAll()
 //     .then((dbBookData) => res.json(dbBookData))
@@ -50,6 +50,51 @@ router.delete('/:id', withAuth, (req, res) => {
 //       res.status(500).json(err);
 //     });
 // });
+
+router.get('/', (req, res) => {
+  Book.findAll({
+    attributes: [
+      'id',
+      'title',
+      'author',
+      'has_read',
+      'favorite',
+      'user_id',
+      'genre_id',
+      'review_id',
+    ],
+    include: [
+      {
+        model: Review,
+        attributes: ['id', 'rating', 'text', 'user_id', 'book_id'],
+        include: {
+          model: User,
+          attributes: ['username'],
+        },
+      },
+      {
+        model: User,
+        attributes: ['username'],
+      },
+    ],
+  })
+    .then((dbBookData) => {
+      const books = dbBookData.map((book) =>
+        book.get({
+          plain: true,
+        })
+      );
+
+      res.render('home', {
+        books,
+        loggedIn: req.session.loggedIn,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
 
 //view a single book
 
