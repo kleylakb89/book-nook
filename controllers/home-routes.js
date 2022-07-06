@@ -36,11 +36,23 @@ router.get('/login', (req, res) => {
 
 router.get('/genres', withAuth, (req, res) => {
   Genre.findAll()
-    .then((dbGenreData) => res.json(dbGenreData))
-    .catch((err) => {
-      console.log(err);
-      res.status(500).json(err);
+  .then((dbGenreData) => {
+    const genres = dbGenreData.map((genre) =>
+      genre.get({
+        plain: true,
+      })
+    );
+
+    res.render('all-genres', {
+      genres,
+      style: 'all-books.css',
+      loggedIn: req.session.loggedIn,
     });
+  })
+  .catch((err) => {
+    console.log(err);
+    res.status(500).json(err);
+  });
 });
 
 router.get('/genres/:genre_id', withAuth, (req, res) => {
@@ -121,40 +133,42 @@ router.get('/books', (req, res) => {
 
 //view a single book
 
-router.get("/books/:id", (req, res) => {
+router.get('/books/:id', (req, res) => {
   Book.findOne({
     where: {
       id: req.params.id,
     },
     attributes: [
-      "id",
-      "title",
-      "author",
-      "has_read",
-      "favorite",
-      "user_id",
-      "genre_id",
-      "review_id",
+      'id',
+      'title',
+      'author',
+      'has_read',
+      'favorite',
+      // user_id
     ],
     include: [
       {
         model: Review,
-        attributes: ["id", "rating", "text", "user_id", "book_id"],
+        attributes: ['id', 'rating', 'text', 'user_id', 'book_id'],
         include: {
           model: User,
-          attributes: ["username"],
+          attributes: ['username'],
         },
       },
       {
         model: User,
-        attributes: ["username"],
+        attributes: ['username'],
+      },
+      {
+        model: Genre,
+        attributes: ['name'],
       },
     ],
   })
     .then((dbBookData) => {
       if (!dbBookData) {
         res.status(404).json({
-          message: "No book found with this id",
+          message: 'No book found with this id',
         });
         return;
       }
@@ -163,7 +177,7 @@ router.get("/books/:id", (req, res) => {
         plain: true,
       });
 
-      res.render("single-book", {
+      res.render('single-book', {
         book,
         loggedIn: req.session.loggedIn,
       });

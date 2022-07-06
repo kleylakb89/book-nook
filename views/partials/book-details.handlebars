@@ -13,9 +13,10 @@
     
             
           <div class="social-btn">
-            <button>
-              <i class="fas fa-play"></i> View This Book
-            </button>
+            <a href="/books/{{id}}"><button>
+              <i class="view-book fas fa-play"></i> View This Book
+            </button></a>
+            
             <button>
               <i class="fas fa-download"></i> Add Favorite
             </button>
@@ -23,6 +24,8 @@
             <button>
               <i class="fas fa-thumbs-up"></i> I've Read This
             </button>
+            {{else}}
+            <p>TBR</p>
             {{/if}}
 
           </div>	
@@ -36,3 +39,4 @@
           </div>
         </div>
       </div>
+
