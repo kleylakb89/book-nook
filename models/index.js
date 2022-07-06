@@ -12,7 +12,11 @@ Book.belongsTo(User, {
   foreignKey: 'user_id',
 });
 
-Genre.hasMany(Book, {
+// Genre.hasMany(Book, {
+//   foreignKey: 'genre_id',
+// });
+
+Book.belongsTo(Genre, {
   foreignKey: 'genre_id',
 });
 
