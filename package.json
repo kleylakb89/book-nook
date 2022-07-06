@@ -15,6 +15,7 @@
     "url": "git+https://github.com/kleylakb89/book-nook.git"
   },
   "dependencies": {
+    "axios": "^0.27.2",
     "bcrypt": "^5.0.1",
     "connect-session-sequelize": "^7.0.4",
     "dotenv": "^16.0.1",
