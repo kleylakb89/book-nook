@@ -1,7 +1,49 @@
+<header>
+  <h1 class="headh1">Your Library</h1>
+  <div class="navdiv">
+    <a href="#" class="nav" id="nav1"></a>
+    <a href="#" class="nav" id="nav2"></a>
+    <a href="#" class="nav" id="nav3"></a>
+  </div>
+</header>
+
 <section>
-  {{book.title}}
-  {{book.author}}
-  {{book.genre.name}}
+
+  <div class="wrapper">
+    <div class="scifi_card">
+      <div class="card_left">
+        <div class="card_datails">
+          <h1>{{book.title}}</h1>
+          <div class="card_cat">
+
+            <p class="author">{{book.author}}</p>
+            {{!-- <p class="genre">Sci-Fi</p> --}}
+          </div>
+
+          <button>
+            <i class="fas fa-download"></i> Add Favorite
+          </button>
+          {{#if has_read}}
+          <button>
+            <i class="fas fa-thumbs-up"></i> I've Read This
+          </button>
+          {{else}}
+          <p>TBR</p>
+          {{/if}}
+
+        </div>
+      </div>
+    </div>
+    <div class="card_right">
+      <div class="img_container">
+        {{!-- <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1415397166l/1719846.jpg"
+          alt=""> --}}
+      </div>
+
+    </div>
+  </div>
+  </div>
+
   <button id="delete-book">
     <i class="fas fa-download"></i>
     Delete From Library

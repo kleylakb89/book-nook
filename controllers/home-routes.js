@@ -230,6 +230,7 @@ router.get('/books/:id', (req, res) => {
 
       res.render('single-book', {
         book,
+        style: 'all-books.css',
         loggedIn: req.session.loggedIn,
       });
     })
