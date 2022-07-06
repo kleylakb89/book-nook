@@ -1,0 +1,416 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto', sans-serif;
+  background-image: url(/assests/images/flyingbookbg.jpg);
+  background-size: 40%;
+  
+}
+
+header {
+  text-align: center;
+  margin-top: 4%;
+  font-size: 30px;
+  font-family: 'Montserrat', sans-serif;
+  padding-bottom: 2%;
+
+}
+
+.headh1{
+  color: black;
+  background-color: white;
+  padding-bottom: 2%;
+  text-shadow: 25px 20px 20px rgba(0, 0, 0, 0.5);
+  border-bottom: 4px solid black;
+
+
+
+}
+
+.navdiv {
+  margin-top: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+}
+.nav {
+  text-decoration: none;
+  border: 3px solid rgb(192, 192, 165);
+  color: transparent;
+  padding: 40px 80px;
+  font-size: 28px;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 5px;
+  transition: all 0.5s;
+  position: relative;
+  margin-right: 2%;
+  text-shadow: 15px 10px 10px rgba(0, 0, 0, 0.3);
+
+}
+
+#nav1:before {
+  content: "Home";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background: rgb(192, 185, 102);
+  font-size: 28px;
+  top: 0;
+  left: 100%;
+  font-family: sans-serif;
+  letter-spacing: 5px;
+  transition: all 1s;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transform: scale(0) rotatey(0);
+  opacity: 0;
+}
+
+#nav1:hover:before {
+  transform: scale(1) rotatey(360deg);
+  left: 0;
+  opacity: 1;
+}
+#nav2:hover:before {
+  transform: scale(1) rotatey(360deg);
+  left: 0;
+  opacity: 1;
+}
+
+
+#nav1:after {
+  content: "Home";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background: rgb(192, 185, 102);
+  font-size: 28px;
+  top: 0;
+  left: 0;
+  font-family: sans-serif;
+  letter-spacing: 5px;
+  transition: all 1s;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transform: scale(1) rotatey(0);
+  opacity: 1;
+}
+#nav1:hover:after {
+  transform: scale(0) rotatey(360deg);
+  left: -100%;
+  opacity: 0;
+}
+#nav2:hover:after {
+  transform: scale(0) rotatey(360deg);
+  left: -100%;
+  opacity: 0;
+}
+
+#nav2:before {
+  content: "Logout";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background: rgb(192, 185, 102);
+  font-size: 28px;
+  top: 0;
+  left: 100%;
+  font-family: sans-serif;
+  letter-spacing: 5px;
+  transition: all 1s;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transform: scale(0) rotatey(0);
+  opacity: 0;
+}
+
+#nav2:after {
+  content: "Logout";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background: rgb(192, 185, 102);
+  font-size: 28px;
+  top: 0;
+  left: 0;
+  font-family: sans-serif;
+  letter-spacing: 5px;
+  transition: all 1s;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transform: scale(1) rotatey(0);
+  opacity: 1;
+}
+#nav3:before {
+  content: "Add a Book";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background: rgb(192, 185, 102);
+  font-size: 28px;
+  top: 0;
+  left: 100%;
+  font-family: sans-serif;
+  letter-spacing: 5px;
+  transition: all 1s;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transform: scale(0) rotatey(0);
+  opacity: 0;
+}
+
+#nav3:hover:before {
+  transform: scale(1) rotatey(360deg);
+  left: 0;
+  opacity: 1;
+}
+#nav3:after {
+  content: "Add a Book";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background: rgb(192, 185, 102);
+  font-size: 28px;
+  top: 0;
+  left: 0;
+  font-family: sans-serif;
+  letter-spacing: 5px;
+  transition: all 1s;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transform: scale(1) rotatey(0);
+  opacity: 1;
+}
+#nav3:hover:after {
+  transform: scale(0) rotatey(360deg);
+  left: -100%;
+  opacity: 0;
+}
+
+
+
+
+.mystery_card {
+	color: #fff;
+	width: 760px;
+	height: 390px;
+	margin: 50px auto;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	max-width: 770px;
+	background: #00C9FF; 
+	background: -webkit-linear-gradient(to right, black, #440971);
+	background: -webkit-gradient(linear, left top, right top, from(#92FE9D), to(#440971));
+	background: -webkit-linear-gradient(left, black, #440971);
+	background: -o-linear-gradient(left, black, #440971);
+	background: linear-gradient(to right, black, #440971); 
+	-webkit-box-shadow: 0 0 40px rgba(0,0,0,0.3); 
+	        box-shadow: 0 0 40px rgba(0,0,0,0.3);
+}
+.romance_card {
+	color: #fff;
+	width: 760px;
+	height: 390px;
+	margin: 50px auto;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	max-width: 770px;
+	background: #00C9FF; 
+	background: -webkit-linear-gradient(to right, black, #f8a8df);
+	background: -webkit-gradient(linear, left top, right top, from(#92FE9D), to(#f8a8df));
+	background: -webkit-linear-gradient(left, black, #f8a8df);
+	background: -o-linear-gradient(left, black, #f8a8df);
+	background: linear-gradient(to right, black, #f8a8df); 
+	-webkit-box-shadow: 0 0 40px rgba(0,0,0,0.3); 
+	        box-shadow: 0 0 40px rgba(0,0,0,0.3);
+}
+
+.horror_card {
+	color: #fff;
+	width: 760px;
+	height: 390px;
+	margin: 50px auto;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	max-width: 770px;
+	background: #00C9FF; 
+	background: -webkit-linear-gradient(to right, black, #f1a84f);
+	background: -webkit-gradient(linear, left top, right top, from(#92FE9D), to(#f1a84f));
+	background: -webkit-linear-gradient(left, black, #f1a84f);
+	background: -o-linear-gradient(left, black, #f1a84f);
+	background: linear-gradient(to right, black, #f1a84f); 
+	-webkit-box-shadow: 0 0 40px rgba(0,0,0,0.3); 
+	        box-shadow: 0 0 40px rgba(0,0,0,0.3);
+}
+
+.fantasy_card {
+	color: #fff;
+	width: 760px;
+	height: 390px;
+	margin: 50px auto;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	max-width: 770px;
+	background: #00C9FF; 
+	background: -webkit-linear-gradient(to right, black, #72eafa);
+	background: -webkit-gradient(linear, left top, right top, from(#92FE9D), to(#f1a84f));
+	background: -webkit-linear-gradient(left, black, #72eafa);
+	background: -o-linear-gradient(left, black, #72eafa);
+	background: linear-gradient(to right, black, #72eafa); 
+	-webkit-box-shadow: 0 0 40px rgba(0,0,0,0.3); 
+	        box-shadow: 0 0 40px rgba(0,0,0,0.3);
+}
+
+.scifi_card {
+	color: #fff;
+	width: 760px;
+	height: 390px;
+	margin: 50px auto;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	max-width: 770px;
+	background: #00C9FF; 
+	background: -webkit-linear-gradient(to right, black, #92FE9D);
+	background: -webkit-gradient(linear, left top, right top, from(#92FE9D), to(#f1a84f));
+	background: -webkit-linear-gradient(left, black, #92FE9D);
+	background: -o-linear-gradient(left, black, #92FE9D);
+	background: linear-gradient(to right, black, #92FE9D); 
+	-webkit-box-shadow: 0 0 40px rgba(0,0,0,0.3); 
+	        box-shadow: 0 0 40px rgba(0,0,0,0.3);
+}
+
+.card_left {
+	width: 90%;
+  box-shadow: 25px 20px 20px rgba(0, 0, 0, 0.5);
+}
+img{
+  box-shadow: 25px 20px 20px rgba(0, 0, 0, 0.5);
+}
+
+.card_datails {
+	width: 90%;
+	padding: 30px;
+	margin-top: -25px;
+}
+.card_datails  h1 {
+	font-size: 30px;
+}
+.card_right img {
+	height: 390px;
+	border-radius: 2px;
+}
+.card_right {
+	border-radius: 2px;
+}
+
+.card_cat {
+	width: 100%;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+}
+
+.author, .genre, .pages {
+	color: fff;
+	padding: 10px;
+	font-weight: bold;
+	border-radius: 15px;
+}
+
+
+.disc {
+	font-weight: 100;
+	line-height: 27px;
+}
+a {
+	color: darkcyan;
+	display: block;
+	text-decoration: none;
+}
+
+.social-btn {
+	margin-left: -10px;
+}
+button {
+	color: #fff;
+	border: none;
+	padding: 20px;
+	outline: none;
+	font-size: 12px;
+	margin-top: 30px;
+	margin-left: 10px;
+	background: none;
+  border: 2px solid white;
+	border-radius: 12px;
+	-webkit-box-shadow: 0 0 20px rgba(0,0,0,0.2);
+	        box-shadow: 0 0 20px rgba(0,0,0,0.2);
+	-webkit-transition: 300ms ease-in-out;
+	-o-transition: 200ms ease-in-out;
+	transition: 200ms ease-in-out;
+}
+
+button:hover {
+	-webkit-transform: scale(1.1);
+	    -ms-transform: scale(1.1);
+	        transform: scale(1.1);
+}
+
+
+
+
+@-webkit-keyframes bounce {
+  8% {
+    transform: scale(0.3);
+    -webkit-transform: scale(0.8);
+    opacity: 1;
+  }
+  10% {
+    transform: scale(1.8);
+    -webkit-transform: scale(2);
+    opacity: 0;
+		}
+}
+
+@keyframes bounce {
+  8% {
+    transform: scale(0.3);
+    -webkit-transform: scale(0.8);
+    opacity: 1;
+  }
+  20% {
+    transform: scale(1.8);
+    -webkit-transform: scale(2);
+    opacity: 0;
+		}
+}
+
+
+
+
+
+
+
+
