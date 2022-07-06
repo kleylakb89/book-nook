@@ -1,3 +1,7 @@
+const signUpButton = document.getElementById('signUp');
+const signInButton = document.getElementById('signIn');
+const container = document.getElementById('container');
+
 const loginFormHandler = async (event) => {
   event.preventDefault();
 
@@ -45,6 +49,12 @@ document
   .querySelector('.login-form')
   .addEventListener('click', loginFormHandler);
 
-document
-  .querySelector('.signup-form')
-  .addEventListener('click', signupHandler);
+document.querySelector('.signup-form').addEventListener('click', signupHandler);
+
+signUpButton.addEventListener('click', () => {
+  container.classList.add('right-panel-active');
+});
+
+signInButton.addEventListener('click', () => {
+  container.classList.remove('right-panel-active');
+});
