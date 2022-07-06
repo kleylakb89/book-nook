@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { Book, Review, User } = require('../models');
 
 router.get('/', (req, res) => {
   // res.render('home')
@@ -9,11 +10,22 @@ router.get('/', (req, res) => {
   }
 });
 
+
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect('/library-routes');
+    res.redirect('/');
+    return;
   }
+
   res.render('login');
 });
+
+// router.get('*', (req, res) => {
+//   res.status(404).send('Can\'t go there!');
+// });
+
+//need a single-book handlebars
+//extra comment
+
 
 module.exports = router;
