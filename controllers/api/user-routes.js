@@ -26,47 +26,7 @@ router.post('/', (req, res) => {
     });
 });
 
-// router.post('/login' ,(req, res) => {
 
-// })
-
-// router.post('/login', async (req, res) => {
-//   User.findOne({
-//     where: {
-//       email: req.body.email
-//     }
-//   })
-//     .then(userData => {
-//       if (!userData) {
-//         res.status(400).json({
-//           message: 'Cannot find that email!'
-//         });
-//         return;
-//       }
-
-//       const validPassword = await userData.checkPassword(req.body.password);
-
-//       if (!validPassword) {
-//         res.status(400).json({
-//           message: 'Incorrect password!'
-//         });
-//         return;
-//       }
-
-//       req.session.save(() => {
-//         req.session.user_id = userData.id;
-//         req.session.username = userData.username;
-//         req.session.email = dbEmailData.email;
-//         req.session.password= dbPasswordData.password;
-//         req.session.loggedIn = true;
-
-//         res.json({
-//           user: userData,
-//           message: 'Login successful!'
-//         });
-//       });
-//     });
-// });
 
 router.post('/login', async (req, res) => {
   try {
@@ -112,19 +72,6 @@ router.post('/logout', (req, res) => {
     res.status(404).end();
   }
 });
-//get all users?
 
-// router.get('/', (req, res) => {
-//   User.findAll({
-//     attributes: {
-//       exclude: ['password'],
-//     },
-//   })
-//     .then((userData) => res.json(userData))
-//     .catch((err) => {
-//       console.log(err);
-//       res.status(500).json(err);
-//     });
-// });
 
 module.exports = router;

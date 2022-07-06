@@ -9,6 +9,7 @@ router.get('/', (req, res) => {
     res.redirect('login');
   } else {
     res.render('home', {
+      style: 'login.css',
       loggedIn: req.session.loggedIn,
     });
   }
@@ -106,6 +107,7 @@ router.get('/books', (req, res) => {
 
       res.render('books', {
         books,
+        style: 'all-books.css',
         loggedIn: req.session.loggedIn,
       });
     })

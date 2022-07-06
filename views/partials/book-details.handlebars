@@ -1,7 +1,4 @@
-<section>
-  <h3>{{title}}</h3>
-  <h4>{{author}}</h4>
-</section>
+
 
  <div class="wrapper">
       <div class="scifi_card">
@@ -13,8 +10,8 @@
               <p class="author">{{author}}</p>
               {{!-- <p class="genre">Sci-Fi</p> --}}
             </div>
-            <p class="disc">I ont gotta damn clue what this books about.</p>
-            <a href="" target="_blank">Read More</a>
+    
+            
           <div class="social-btn">
             <button>
               <i class="fas fa-play"></i> View This Book
@@ -22,16 +19,18 @@
             <button>
               <i class="fas fa-download"></i> Add Favorite
             </button>
+            {{#if has_read}}
             <button>
               <i class="fas fa-thumbs-up"></i> I've Read This
             </button>
+            {{/if}}
 
           </div>	
           </div>
         </div>
         <div class="card_right">
           <div class="img_container">
-            <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1415397166l/1719846.jpg" alt="">
+            {{!-- <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1415397166l/1719846.jpg" alt=""> --}}
             </div>
             
           </div>
