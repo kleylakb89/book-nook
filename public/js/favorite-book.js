@@ -1,15 +1,15 @@
-let readBook = document.querySelector('#read-book');
+let favoriteBook = document.querySelector('#favorite-book');
 
-const hasReadBook = async (event) => {
+const favBook = async (event) => {
   event.preventDefault();
 
-  const has_read = true;
+  const favorite = true;
   const id = window.location.pathname;
 
-  const response = await fetch(`/api/${id}`, {
+  const response = await fetch(`${id}`, {
     method: 'PUT',
     body: JSON.stringify({
-      has_read
+      favorite
     }),
     headers: {'Content-Type': 'application/json',},
   });
@@ -18,4 +18,4 @@ const hasReadBook = async (event) => {
   }
 };
 
-readBook.addEventListener('click', hasReadBook);
+favoriteBook.addEventListener('click', favBook);

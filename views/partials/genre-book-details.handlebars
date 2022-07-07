@@ -18,24 +18,17 @@
               <i class="view-book fas fa-play"></i> View This Book
             </button></a>
 
-          <button>
-            <i class="fas fa-download"></i> Add Favorite
-          </button>
-          {{#if has_read}}
-          <button>
-            <i class="fas fa-thumbs-up"></i> I've Read This
-          </button>
-          {{else}}
-          <p>TBR</p>
-          {{/if}}
 
         </div>
       </div>
     </div>
     <div class="card_right">
       <div class="img_container">
-        {{!-- <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1415397166l/1719846.jpg"
-          alt=""> --}}
+        {{#if cover}}
+      <img src="{{cover}}" alt="{{title}}">
+      {{else}}
+      <img src="https://via.placeholder.com/400.png?text={{title}}" alt="{{title}}">
+      {{/if}}
       </div>
 
     </div>

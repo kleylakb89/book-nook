@@ -23,7 +23,7 @@ router.get('/add', (req, res) => {
     res.render('add-book', {
       style: 'all-books.css',
       loggedIn: req.session.loggedIn,
-      mainPage: true,
+      mainPage: false,
     });
   }
 });
@@ -60,7 +60,7 @@ router.get('/genres', withAuth, (req, res) => {
         genres,
         style: 'all-books.css',
         loggedIn: req.session.loggedIn,
-        mainPage: true,
+        mainPage: false,
       });
     })
     .catch((err) => {
@@ -93,7 +93,7 @@ router.get('/genres/:genre_id', withAuth, (req, res) => {
         books,
         style: 'all-books.css',
         loggedIn: req.session.loggedIn,
-        mainPage: true,
+        mainPage: false,
       });
     })
     .catch((err) => {
@@ -191,7 +191,7 @@ router.get('/favorites', (req, res) => {
         books,
         style: 'all-books.css',
         loggedIn: req.session.loggedIn,
-        mainPage: true,
+        mainPage: false,
       });
     })
     .catch((err) => {
