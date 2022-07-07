@@ -1,23 +1,23 @@
-<header class = "sticky">
-        <h1 class="headh1">Add Book</h1>
-        <div class="navdiv">
-          <a href="/" class="nav" id="nav1"></a>
-          <a href="#" class="nav" id="nav2"></a>
-          <a href="/books" class="nav" id="nav4"></a>
-          <a href="/genres" class="nav" id="nav5"></a>
-          <a href="/favorites" class="nav" id="nav6"></a>
-          <a href="/add" class="nav" id="nav7"></a>
-        </div>
-      </header>
+<header class="sticky">
+  <h1 class="headh1">Add Book</h1>
+  <div class="navdiv">
+    <a href="/" class="nav" id="nav1"></a>
+    <a href="#" class="nav" id="nav2"></a>
+    <a href="/books" class="nav" id="nav4"></a>
+    <a href="/genres" class="nav" id="nav5"></a>
+    <a href="/favorites" class="nav" id="nav6"></a>
+    <a href="/add" class="nav" id="nav7"></a>
+  </div>
+</header>
 
-<div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
-  <h1><a href="/" rel="dofollow">Book Nook</a></h1>
+{{!-- <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
+  <h1><a href="/" rel="dofollow">Book Nook</a></h1> --}}
 </div>
 <div class="formbg-outer">
   <div class="formbg">
     <div class="formbg-inner padding-horizontal--48">
-      <span class="padding-bottom--15">What book would like to add?</span>
-      <form action="#" id="stripe-login">
+      <span class="padding-bottom--15 add_class">What book would like to add?</span>
+      <form action="#" id="stripe-login" class="form_padding">
         <div class="field padding-bottom--24">
           <label for="text">Book Title</label>
           <input type="text" id="book-title">
@@ -29,16 +29,18 @@
           <input type="text" id="book-author">
         </div>
         <label for="genres">Genre:</label>
+        <div id="genre_menu">
+          <select name="genres" id="genres">
+            <option value="1">Mystery</option>
+            <option value="2">Romance</option>
+            <option value="3">Horror</option>
+            <option value="4">Fantasy</option>
+            <option value="5">Sci-Fi</option>
+            <option value="6">Non-Fiction</option>
+            <option value="7">Literary Fiction</option>
+          </select>
+        </div>
 
-        <select name="genres" id="genres">
-          <option value="1">Mystery</option>
-          <option value="2">Romance</option>
-          <option value="3">Horror</option>
-          <option value="4">Fantasy</option>
-          <option value="5">Sci-Fi</option>
-          <option value="6">Non-Fiction</option>
-          <option value="7">Literary Fiction</option>
-        </select>
         <div class="field field-checkbox padding-bottom--24 flex-flex align-center">
           <label for="checkbox">
             <input type="checkbox" name="checkbox" id="favorite"> Add To Favorite
