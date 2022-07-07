@@ -10,6 +10,7 @@ router.post('/', withAuth, (req, res) => {
     author: req.body.author,
     has_read: req.body.has_read,
     favorite: req.body.favorite,
+    cover: req.body.cover,
     user_id: req.session.user_id,
     genre_id: req.body.genre_id,
   })
@@ -65,15 +66,24 @@ router.post('/search', (req, res) => {
       const isbn = data[`title:${title}`].details.isbn_13[0];
       res.send(`https://covers.openlibrary.org/b/isbn/${isbn}-M.jpg`);
     } else {
-  axios({
-    method: 'get',
-    url: `https://api.lorem.space/image/book?w=150&h=220`,
-    responseType: 'json',
-  }).then(({ data }) => {
-   console.log(data);
-  });
+      res.json(null);
     }
   });
 });
+
+// router.get('/cover', (req, res) => {
+//   axios({
+//     method: 'get',
+//     url: 'https://api.lorem.space/image/book?w=150&h=220',
+//     responseType: 'json',
+//   }).then(({ data }) => {
+//     if (data.length && data[`title:${title}`].details.isbn_13[0]) {
+//       const isbn = data[`title:${title}`].details.isbn_13[0];
+//       res.send(`https://covers.openlibrary.org/b/isbn/${isbn}-M.jpg`);
+//     } else {
+//       res.send(false);
+//     }
+//   });
+// });
 
 module.exports = router;

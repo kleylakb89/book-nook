@@ -31,8 +31,13 @@
     </div>
     <div class="card_right">
       <div class="img_container">
+        {{!-- https://via.placeholder.com/400.png?text=Book%20Cover%20Unavailable --}}
+        {{#if cover}}
         <img src="{{cover}}"
-          alt="book cover">
+          alt="{{title}}">
+          {{else}}
+          <img src="https://via.placeholder.com/400.png?text={{title}}" alt="{{title}}">
+          {{/if}}
       </div>
 
     </div>
