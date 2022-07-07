@@ -516,11 +516,11 @@ header {
 	display: flex;
 	max-width: 770px;
 	background: #00C9FF; 
-	background: -webkit-linear-gradient(to right, black, #92FE9D);
+	background: -webkit-linear-gradient(to right, black, #973b14);
 	background: -webkit-gradient(linear, left top, right top, from(#92FE9D), to(#f1a84f));
-	background: -webkit-linear-gradient(left, black, #92FE9D);
-	background: -o-linear-gradient(left, black, #92FE9D);
-	background: linear-gradient(to right, black, #92FE9D); 
+	background: -webkit-linear-gradient(left,  black, #973b14);
+	background: -o-linear-gradient(left,  black, #973b14);
+	background: linear-gradient(to right,  black, #973b14); 
 	-webkit-box-shadow: 0 0 40px rgba(0,0,0,0.3); 
 	        box-shadow: 0 0 40px rgba(0,0,0,0.3);
 }
