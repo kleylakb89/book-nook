@@ -11,13 +11,13 @@ router.post('/', withAuth, (req, res) => {
     has_read: req.body.has_read,
     favorite: req.body.favorite,
     user_id: req.session.user_id,
-    genre_id: req.body.genre_id
+    genre_id: req.body.genre_id,
   })
-  .then((dbBookData) => res.json(dbBookData))
-  .catch((err) => {
-    console.log(err);
-    res.status(500).json(err);
-  });
+    .then((dbBookData) => res.json(dbBookData))
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 //delete a book
@@ -30,7 +30,7 @@ router.delete('/:id', withAuth, (req, res) => {
     .then((dbBookData) => {
       if (!dbBookData) {
         res.status(404).json({
-          message: 'No book found with this id'
+          message: 'No book found with this id',
         });
         return;
       }
@@ -59,20 +59,17 @@ router.post('/search', (req, res) => {
   axios({
     method: 'get',
     url: `https://openlibrary.org/api/books?bibkeys=title:${title}&jscmd=details&format=json`,
-    responseType: 'json'
-  })
-  .then(({data}) => {
-    if(data.length) {
+    responseType: 'json',
+  }).then(({ data }) => {
+    if (data.length && data[`title:${title}`].details.isbn_13[0]) {
       const isbn = data[`title:${title}`].details.isbn_13[0];
       res.send(`https://covers.openlibrary.org/b/isbn/${isbn}-M.jpg`);
     } else {
-      res.send('https://via.placeholder.com/400.png?text=Book%20Cover%20Unavailable')
+      res.send(
+        'https://via.placeholder.com/400.png?text=Book%20Cover%20Unavailable'
+      );
     }
   });
 });
-
-
-
-
 
 module.exports = router;
