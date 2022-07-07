@@ -37,7 +37,6 @@ Book.init(
 
     cover: {
       type: DataTypes.STRING,
-      defaultValue: 'https://via.placeholder.com/400.png?text=Book%20Cover%20Unavailable',
     },
 
     user_id: {

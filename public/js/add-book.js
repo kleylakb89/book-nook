@@ -19,13 +19,14 @@ const addBook = async (event) => {
     favorite = true;
   }
 
-  const cover = await fetch('/api/books/search', {
+  const bookResult = await fetch('/api/books/search', {
     method: 'POST',
     body: JSON.stringify({
       title
     }),
     headers: {'Content-Type': 'application/json',},
   });
+  const cover = await bookResult.json();
   console.log(cover);
 
   const response = await fetch('/api/books', {
