@@ -19,6 +19,14 @@ const addBook = async (event) => {
     favorite = true;
   }
 
+  const cover = await fetch('/api/books/search', {
+    method: 'POST',
+    body: JSON.stringify({
+      title
+    }),
+    headers: {'Content-Type': 'application/json',},
+  });
+
   const response = await fetch('/api/books', {
     method: 'POST',
     body: JSON.stringify({
@@ -26,6 +34,7 @@ const addBook = async (event) => {
       author,
       has_read,
       favorite,
+      cover,
       genre_id,
     }),
     headers: {'Content-Type': 'application/json',},
