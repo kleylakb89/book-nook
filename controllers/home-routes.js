@@ -75,6 +75,7 @@ router.get('/genres/:genre_id', withAuth, (req, res) => {
   Book.findAll({
     where: {
       genre_id: req.params.genre_id,
+      user_id: req.session.user_id,
     },
     include: [
       {
@@ -105,12 +106,16 @@ router.get('/genres/:genre_id', withAuth, (req, res) => {
 
 router.get('/books', (req, res) => {
   Book.findAll({
+    // where: {
+    //   user_id: req.session.user_id,
+    // },
     attributes: [
       'id',
       'title',
       'author',
       'has_read',
       'favorite',
+      'cover',
       'user_id',
       'genre_id',
       'review_id',
@@ -159,6 +164,7 @@ router.get('/favorites', (req, res) => {
   Book.findAll({
     where: {
       favorite: true,
+      user_id: req.session.user_id,
     },
     attributes: [
       'id',
@@ -208,6 +214,7 @@ router.get('/books/:id', (req, res) => {
   Book.findOne({
     where: {
       id: req.params.id,
+      user_id: req.session.user_id,
     },
     attributes: [
       'id',
