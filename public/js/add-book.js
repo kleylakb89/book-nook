@@ -30,7 +30,7 @@ const addBook = async (event) => {
     })
     .then(data => {
       console.log(data);
-      cover = (data.books[0].image);
+      return cover = data.books[0].image;
     })
     .catch(error => {
       console.error('Error:', error);
@@ -48,7 +48,6 @@ const addBook = async (event) => {
   // const cover = await bookResult.json();
   // console.log(cover);
 
-  console.log(cover);
   const response = await fetch('/api/books', {
     method: 'POST',
     body: JSON.stringify({
@@ -62,7 +61,7 @@ const addBook = async (event) => {
     headers: {'Content-Type': 'application/json',},
   });
   if(response.ok) {
-    document.location.replace('/books');
+    // document.location.replace('/books');
   }
 };
 
