@@ -794,13 +794,17 @@ a.ssolink {
 
   /* articles center and resize larger */
   .scifi_card {
-    
+    /* inline-size: min-content; */
+    overflow: hidden;
     margin: 25px auto;
     width: 50%;
   }
   .card_datails{
     width: 50%;
     font-size: 15px;
+    padding: 5px;
+    margin: auto;
+
   }
 
   #nav1:before,
@@ -809,7 +813,10 @@ a.ssolink {
   #nav5:before,
   #nav6:before,
   #nav7:before {
-    width: 50%;
+    width: 30%;
+    font-size: 15px;
+    box-shadow: 25px 20px 20px rgba(0, 0, 0, 0.3);
+    border: 2px solid rgb(192, 192, 165);
   }
 
   #nav1:after,
@@ -818,33 +825,55 @@ a.ssolink {
   #nav5:after,
   #nav6:after,
   #nav7:after {
-    width: 50%;
+    width: 30%;
+    font-size: 12px;
+    box-shadow: 25px 20px 20px rgba(0, 0, 0, 0.3);
+    border: 2px solid rgb(192, 192, 165);
+    padding: 1px;
+
   }
   .nav{
     width: 50%;
     box-shadow: none;
     border: none;
+    margin: 10px;
+
+  }
+  #nav6:before{
+    content: "View All Faves";
+  }
+  #nav6:after{
+    content: "View All Faves";
+
+  }
+  .genre_title{
+    font-size: 35px;
+    text-align: center;
+  }
+  .formbg{
+    width: 50%;
   }
   
 
 }
 
-@media screen and (max-width: 500px) {
+/* @media screen and (max-width: 500px) {
 
-  /* logo takes center of top of screen on small displays */
   .navdiv {
 
     width: 10%;
 
   }
 
-  /* articles center and resize larger */
   .scifi_card {
-    margin: 25px auto;
+    display: inline-flex;
+    justify-content: flex-end;
+    margin-left: 70%;
     width: 50%;
   }
 
-}
+
+} */
 
 /* @media screen and (max-width: 1400px) {
   h1 {

@@ -248,55 +248,6 @@
    height: 40px;
    width: 40px;
  }
- 
- 
- 
- 
- /*scrolling texts begin here and are kinda mid so we might remove*/
- 
- 
- #scroll-container {
-   width: 100%;
-   overflow: hidden;
-   margin-top: 5%;
- }
- 
- #scroll-text {
-   text-align: right;
-   word-spacing: 12px;
-   font-family: 'Montserrat', sans-serif;
-   font-size: 20px;
- 
- 
-   /* animation properties */
-   -moz-transform: translateX(-100%);
-   -webkit-transform: translateX(-100%);
-   transform: translateX(-100%);
-   
-   -moz-animation: my-animation 25s linear infinite;
-   -webkit-animation: my-animation 25s linear infinite;
-   animation: my-animation 25s linear infinite;
- }
- 
- #scroll-text2 {
-   text-align: right;
-   word-spacing: 12px;
-   font-family: 'Montserrat', sans-serif;
-   font-size: 20px;
-   margin-top: 1%;
- 
- 
-   /* animation properties */
-   animation-delay: 1s;
-   -moz-transform: translateX(-100%);
-   -webkit-transform: translateX(-100%);
-   transform: translateX(-100%);
-   
-   -moz-animation: my-animation 25s linear infinite;
-   -webkit-animation: my-animation 25s linear infinite;
-   animation: my-animation 25s linear infinite;
- }
-
 
 
  /* scrolling words ends here*/
@@ -325,3 +276,22 @@
      transform: translateX(100%);
    }
  }
+ @media screen and (max-width: 800px) {
+  h2 {
+      font-size: 35px;
+  }
+  .container {
+    width: 60%;
+}
+  .span{
+    font-size: 20px;
+  }
+  h1{
+    font-size: 15px;
+  }
+  button{
+    font-size: 8px;
+    border: 1px solid white;
+
+  }
+}
