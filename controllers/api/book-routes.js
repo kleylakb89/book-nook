@@ -65,9 +65,13 @@ router.post('/search', (req, res) => {
       const isbn = data[`title:${title}`].details.isbn_13[0];
       res.send(`https://covers.openlibrary.org/b/isbn/${isbn}-M.jpg`);
     } else {
-      res.send(
-        'https://via.placeholder.com/400.png?text=Book%20Cover%20Unavailable'
-      );
+  axios({
+    method: 'get',
+    url: `https://api.lorem.space/image/book?w=150&h=220`,
+    responseType: 'json',
+  }).then(({ data }) => {
+   console.log(data);
+  });
     }
   });
 });
