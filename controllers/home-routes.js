@@ -164,14 +164,7 @@ router.get('/favorites', (req, res) => {
       favorite: true,
       user_id: req.session.user_id,
     },
-    attributes: [
-      'id',
-      'title',
-      'author',
-      'cover',
-      'has_read',
-      'favorite',
-    ],
+    attributes: ['id', 'title', 'author', 'cover', 'has_read', 'favorite'],
     include: [
       {
         model: Review,
@@ -193,7 +186,7 @@ router.get('/favorites', (req, res) => {
           plain: true,
         })
       );
-
+      console.log(books);
       res.render('favorites', {
         books,
         style: 'all-books.css',
@@ -261,6 +254,32 @@ router.get('/books/:id', (req, res) => {
         loggedIn: req.session.loggedIn,
         mainPage: true,
       });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+router.put('/books/:id', withAuth, (req, res) => {
+  Book.update(
+    {
+      favorite: req.body.favorite,
+    },
+    {
+      where: {
+        id: req.params.id,
+      },
+    }
+  )
+    .then((dbBookData) => {
+      if (!dbBookData) {
+        res.status(404).json({
+          message: 'No book found with this id',
+        });
+        return;
+      }
+      res.json(dbBookData);
     })
     .catch((err) => {
       console.log(err);
