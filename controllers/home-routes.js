@@ -164,7 +164,14 @@ router.get('/favorites', (req, res) => {
       favorite: true,
       user_id: req.session.user_id,
     },
-    attributes: ['id', 'title', 'author', 'has_read', 'favorite'],
+    attributes: [
+      'id',
+      'title',
+      'author',
+      'cover',
+      'has_read',
+      'favorite',
+    ],
     include: [
       {
         model: Review,
@@ -212,6 +219,7 @@ router.get('/books/:id', (req, res) => {
       'id',
       'title',
       'author',
+      'cover',
       'has_read',
       'favorite',
       // user_id
