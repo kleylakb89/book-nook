@@ -170,6 +170,7 @@ router.get('/favorites', (req, res) => {
       'id',
       'title',
       'author',
+      'cover',
       'has_read',
       'favorite',
     ],
@@ -220,6 +221,7 @@ router.get('/books/:id', (req, res) => {
       'id',
       'title',
       'author',
+      'cover',
       'has_read',
       'favorite',
       // user_id
