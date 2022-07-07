@@ -9,7 +9,8 @@ const addBook = async (event) => {
   const genre_id = document.querySelector('#genres').value;
   const read = document.querySelector('#has-read');
   const fav = document.querySelector('#favorite');
-  let cover ='';
+  // let cover ='';
+  // let isbn ='';
   let has_read = false;
   let favorite = false;
 
@@ -24,28 +25,28 @@ const addBook = async (event) => {
     'Authorization': '48085_86d037bcde037a43fbe855f18b47d51e'
   };
 
-  fetch(`https://api2.isbndb.com/books/${title}?page=1&pageSize=20&column=title`, {headers: headers})
-    .then(response => {
-      return response.json();
-    })
-    .then(data => {
-      console.log(data);
-      return cover = data.books[0].image;
-    })
-    .catch(error => {
-      console.error('Error:', error);
-    });
+  const bookResult = await fetch(`https://api2.isbndb.com/books/${title}?page=1&pageSize=20&column=title`, {
+    headers: headers,
+  });
+  const data = await bookResult.json();
+  console.log(data);
+  const isbn = data.books[0].isbn13;
+
+  console.log(isbn);
+
+  const cover = `https://covers.openlibrary.org/b/isbn/${isbn}-M.jpg`;
   // const cover = await bookResult.json();
   // console.log(cover);
 
   // const bookResult = await fetch('/api/books/search', {
   //   method: 'POST',
   //   body: JSON.stringify({
-  //     title
+  //     isbn
   //   }),
   //   headers: {'Content-Type': 'application/json',},
   // });
-  // const cover = await bookResult.json();
+  // const cover = new Image();
+  // cover.src = 'data:image/png;base64,' + await bookResult.json();
   // console.log(cover);
 
   const response = await fetch('/api/books', {
@@ -61,7 +62,7 @@ const addBook = async (event) => {
     headers: {'Content-Type': 'application/json',},
   });
   if(response.ok) {
-    // document.location.replace('/books');
+    document.location.replace('/books');
   }
 };
 
