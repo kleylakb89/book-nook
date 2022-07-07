@@ -57,7 +57,7 @@ router.delete('/:id', withAuth, (req, res) => {
 router.post('/search', (req, res) => {
   const title = req.body.title;
   axios({
-    method: 'post',
+    method: 'get',
     url: `https://openlibrary.org/api/books?bibkeys=title:${title}&jscmd=details&format=json`,
     responseType: 'json'
   })
