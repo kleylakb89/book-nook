@@ -54,16 +54,16 @@ router.delete('/:id', withAuth, (req, res) => {
 
 //update a book
 
-router.get('/search', (req, res) => {
-  let title = '1984';
+router.post('/search', (req, res) => {
+  const title = req.body.title;
   axios({
-    method: 'get',
+    method: 'post',
     url: `https://openlibrary.org/api/books?bibkeys=title:${title}&jscmd=details&format=json`,
     responseType: 'json'
   })
   .then(({data}) => {
     const isbn = data[`title:${title}`].details.isbn_13[0];
-    res.send(`<img src='https://covers.openlibrary.org/b/isbn/${isbn}-M.jpg'/>`)
+    res.send(`https://covers.openlibrary.org/b/isbn/${isbn}-M.jpg`);
   });
 });
 
