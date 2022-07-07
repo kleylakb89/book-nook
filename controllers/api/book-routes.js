@@ -55,21 +55,37 @@ router.delete('/:id', withAuth, (req, res) => {
 
 //update a book
 
-router.post('/search', (req, res) => {
-  const title = req.body.title;
-  axios({
-    method: 'get',
-    url: `https://openlibrary.org/api/books?bibkeys=title:${title}&jscmd=details&format=json`,
-    responseType: 'json',
-  }).then(({ data }) => {
-    if (data.length && data[`title:${title}`].details.isbn_13[0]) {
-      const isbn = data[`title:${title}`].details.isbn_13[0];
-      res.send(`https://covers.openlibrary.org/b/isbn/${isbn}-M.jpg`);
-    } else {
-      res.json(null);
-    }
-  });
-});
+// router.post('/search', (req, res) => {
+//   const title = req.body.title;
+//   axios({
+//     method: 'get',
+//     url: `https://openlibrary.org/api/books?bibkeys=title:${title}&jscmd=details&format=json`,
+//     responseType: 'json',
+//   }).then(({ data }) => {
+//     if (data.length && data[`title:${title}`].details.isbn_13[0]) {
+//       const isbn = data[`title:${title}`].details.isbn_13[0];
+//       res.send(`https://covers.openlibrary.org/b/isbn/${isbn}-M.jpg`);
+//     } else {
+//       res.json(null);
+//     }
+//   });
+// });
+// router.post('/search', (req, res) => {
+//   const title = req.body.title;
+//   axios({
+//     method: 'get',
+//     url: `https://api2.isbndb.com/books/${title}?page=1&pageSize=20&column=title`,
+//     responseType: 'json',
+//   }).then(({ data }) => {
+//     console.log(data);
+    // if (data.length && data[`title:${title}`].details.isbn_13[0]) {
+    //   const isbn = data[`title:${title}`].details.isbn_13[0];
+    //   res.send(`https://covers.openlibrary.org/b/isbn/${isbn}-M.jpg`);
+    // } else {
+    //   res.json(null);
+    // }
+//   });
+// });
 
 // router.get('/cover', (req, res) => {
 //   axios({
