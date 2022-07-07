@@ -71,6 +71,24 @@ router.delete('/:id', withAuth, (req, res) => {
 //   });
 // });
 // router.post('/search', (req, res) => {
+//   const isbn = 9780747532743;
+//   // const isbn = req.body.isbn;
+//   axios({
+//     method: 'get',
+//     url: `https://covers.openlibrary.org/b/isbn/${isbn}-M.jpg`,
+//     responseType: 'json',
+//   }).then(({ data }) => {
+//     console.log(data);
+//     res.send(data);
+    // if (data.length && data[`title:${title}`].details.isbn_13[0]) {
+    //   const isbn = data[`title:${title}`].details.isbn_13[0];
+    //   res.send(`https://covers.openlibrary.org/b/isbn/${isbn}-M.jpg`);
+    // } else {
+    //   res.json(null);
+    // }
+//   });
+// });
+// router.post('/search', (req, res) => {
 //   const title = req.body.title;
 //   axios({
 //     method: 'get',
@@ -78,12 +96,12 @@ router.delete('/:id', withAuth, (req, res) => {
 //     responseType: 'json',
 //   }).then(({ data }) => {
 //     console.log(data);
-    // if (data.length && data[`title:${title}`].details.isbn_13[0]) {
-    //   const isbn = data[`title:${title}`].details.isbn_13[0];
-    //   res.send(`https://covers.openlibrary.org/b/isbn/${isbn}-M.jpg`);
-    // } else {
-    //   res.json(null);
-    // }
+//     if (data.length && data[`title:${title}`].details.isbn_13[0]) {
+//       const isbn = data[`title:${title}`].details.isbn_13[0];
+//       res.send(`https://covers.openlibrary.org/b/isbn/${isbn}-M.jpg`);
+//     } else {
+//       res.json(null);
+//     }
 //   });
 // });
 
