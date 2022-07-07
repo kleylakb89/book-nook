@@ -1,4 +1,4 @@
-<form action="#">
+{{!-- <form action="#">
   <h1 class="add-book">Add Book</h1>
 
   <input type="text" id="book-title" placeholder="Title" />
@@ -22,6 +22,59 @@
   <label for="favorite">Add To Favorites</label>
 
   <button class="submit-book">Add Book</button>
-</form>
+</form> --}}
+
+
+<div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
+  <h1><a href="/" rel="dofollow">Book Nook</a></h1>
+</div>
+<div class="formbg-outer">
+  <div class="formbg">
+    <div class="formbg-inner padding-horizontal--48">
+      <span class="padding-bottom--15">What book would like to add?</span>
+      <form action="#" id="stripe-login">
+        <div class="field padding-bottom--24">
+          <label for="text">Book Title</label>
+          <input type="text" id="book-title">
+        </div>
+        <div class="field padding-bottom--24">
+          <div class="grid--50-50">
+            <label for="text">Author</label>
+          </div>
+          <input type="text" id="book-author">
+        </div>
+        <label for="genres">Genre:</label>
+
+        <select name="genres" id="genres">
+          <option value="1">Mystery</option>
+          <option value="2">Romance</option>
+          <option value="3">Horror</option>
+          <option value="4">Fantasy</option>
+          <option value="5">Sci-Fi</option>
+          <option value="6">Non-Fiction</option>
+          <option value="7">Literary Fiction</option>
+        </select>
+        <div class="field field-checkbox padding-bottom--24 flex-flex align-center">
+          <label for="checkbox">
+            <input type="checkbox" name="checkbox" id="favorite"> Add To Favorite
+          </label>
+          <label for="checkbox">
+            <input type="checkbox" name="checkbox" id="has-read"> I Have Read This
+          </label>
+        </div>
+        <div class="field padding-bottom--24">
+          <input class="submit-book" type="submit" name="submit" value="Add Book ">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
 
 <script src="/js/add-book.js"></script>
