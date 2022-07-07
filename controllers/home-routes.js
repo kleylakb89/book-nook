@@ -2,7 +2,6 @@ const router = require('express').Router();
 const { Book, Review, User, Genre } = require('../models');
 const withAuth = require('../utils/auth');
 
-
 router.get('/', (req, res) => {
   // res.render('home')
   if (!req.session.loggedIn) {
@@ -29,14 +28,13 @@ router.get('/add', (req, res) => {
   }
 });
 
-
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
     res.redirect('/');
     return;
   }
 
-  res.render('login',{
+  res.render('login', {
     style: 'login.css',
     mainPage: false,
   });
@@ -51,24 +49,24 @@ router.get('/login', (req, res) => {
 
 router.get('/genres', withAuth, (req, res) => {
   Genre.findAll()
-  .then((dbGenreData) => {
-    const genres = dbGenreData.map((genre) =>
-      genre.get({
-        plain: true,
-      })
-    );
+    .then((dbGenreData) => {
+      const genres = dbGenreData.map((genre) =>
+        genre.get({
+          plain: true,
+        })
+      );
 
-    res.render('all-genres', {
-      genres,
-      style: 'all-books.css',
-      loggedIn: req.session.loggedIn,
-      mainPage: true,
+      res.render('all-genres', {
+        genres,
+        style: 'all-books.css',
+        loggedIn: req.session.loggedIn,
+        mainPage: true,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
     });
-  })
-  .catch((err) => {
-    console.log(err);
-    res.status(500).json(err);
-  });
 });
 
 router.get('/genres/:genre_id', withAuth, (req, res) => {
@@ -106,9 +104,9 @@ router.get('/genres/:genre_id', withAuth, (req, res) => {
 
 router.get('/books', (req, res) => {
   Book.findAll({
-    // where: {
-    //   user_id: req.session.user_id,
-    // },
+    where: {
+      user_id: req.session.user_id,
+    },
     attributes: [
       'id',
       'title',
@@ -269,7 +267,5 @@ router.get('/books/:id', (req, res) => {
       res.status(500).json(err);
     });
 });
-
-
 
 module.exports = router;
