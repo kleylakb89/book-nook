@@ -8,9 +8,8 @@ const deleteBook = async (event) => {
     method: 'DELETE',
     headers: {'Content-Type': 'application/json',},
   });
-  if(response.ok) {
-    document.location.replace('/books');
-  }
+  document.location.replace('/books');
+
 };
 
 deletedBook.addEventListener('click', deleteBook);

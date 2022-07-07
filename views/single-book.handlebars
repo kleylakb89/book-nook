@@ -38,18 +38,23 @@
     </div>
     <div class="card_right">
       <div class="img_container">
-        <img src={{cover}} alt="book cover">
+      {{#if book.cover}}
+      <img src="{{book.cover}}" alt="{{book.title}}">
+      {{else}}
+      <img src="https://via.placeholder.com/400.png?text={{book.title}}" alt="{{book.title}}">
+      {{/if}}
       </div>
 
     </div>
   </div>
-  </div>
+</div>
 
-  <button id="delete-book">
-    <i class="fas fa-download"></i>
-    Delete From Library
-  </button>
-</section>
-
+{{#if book.favorite}}
+{{else}}
+<script src="/js/favorite-book.js"></script>
+{{/if}}
+{{#if book.has_read}}
+{{else}}
 <script src="/js/update-book.js"></script>
+{{/if}}
 <script src="/js/delete-book.js"></script>
