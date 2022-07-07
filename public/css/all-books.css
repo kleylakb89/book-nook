@@ -18,6 +18,11 @@ header {
 
 }
 
+.sticky {
+  position: sticky;
+  top: 0;
+}
+
 .headh1{
   color: black;
   background-color: white;
@@ -35,6 +40,8 @@ header {
   justify-content: center;
   align-items: center;
   height: 10vh;
+  position: sticky;
+  top: 0;
 }
 .nav {
   text-decoration: none;
@@ -48,7 +55,8 @@ header {
   position: relative;
   margin-right: 2%;
   text-shadow: 15px 10px 10px rgba(0, 0, 0, 0.3);
-
+  position: sticky;
+  top: 0;
 }
 
 #nav1:before {

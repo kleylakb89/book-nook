@@ -1,33 +1,35 @@
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BookNook</title>
-  <link rel="stylesheet" href="/css/{{style}}">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookNook</title>
+    <link rel="stylesheet" href="/css/{{style}}" />
+  </head>
 
-<body>
+  <body>
 
-  {{#if mainPage}}
-  <header>
-    <h1 class="headh1">Your Library</h1>
-    <div class="navdiv">
-      <a href="/" class="nav" id="nav1"></a>
-      <a href="#" class="nav" id="nav2"></a>
-      <a href="/add" class="nav" id="nav3"></a>
+    {{#if mainPage}}
+      <header class = "sticky">
+        <h1 class="headh1">Your Library</h1>
+        <div class="navdiv">
+          <a href="/" class="nav" id="nav1"></a>
+          <a href="#" class="nav" id="nav2"></a>
+          <a href="/books" class="nav" id="nav4"></a>
+          <a href="/genres" class="nav" id="nav5"></a>
+          <a href="/favorites" class="nav" id="nav6"></a>
+          <a href="/add" class="nav" id="nav7"></a>
+        </div>
+      </header>
+    {{/if}}
 
-    </div>
-  </header>
-  {{/if}}
-
-  <main>
-    {{{body}}}
-  </main>
-  {{#if loggedIn}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
-</body>
+    <main>
+      {{{body}}}
+    </main>
+    {{#if loggedIn}}
+      <script src="/js/logout.js"></script>
+    {{/if}}
+  </body>
 
 </html>
