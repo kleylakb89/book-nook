@@ -12,16 +12,23 @@
             <p class="author">{{book.author}}</p>
             {{!-- <p class="genre">Sci-Fi</p> --}}
           </div>
-
+          {{#if book.favorite}}
+          <button>
+            <i class="fas fa-download"></i> In Favorites!
+          </button>
+          {{else}}
           <button id="favorite-book">
             <i class="fas fa-download"></i> Add Favorite
           </button>
-          {{#if has_read}}
+          {{/if}}
+          {{#if book.has_read}}
           <button>
             <i class="fas fa-thumbs-up"></i> I've Read This
           </button>
           {{else}}
-          <p>TBR</p>
+          <button id="read-book">
+            <i class="fas fa-thumbs-up"></i> Mark As Read
+          </button>
           {{/if}}
 
         </div>

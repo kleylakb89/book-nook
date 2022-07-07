@@ -86,4 +86,30 @@ router.post('/search', (req, res) => {
 //   });
 // });
 
+router.put('/:id', withAuth, (req, res) => {
+  Book.update(
+    {
+      has_read: req.body.has_read,
+    },
+    {
+      where: {
+        id: req.params.id,
+      },
+    }
+  )
+    .then((dbBookData) => {
+      if (!dbBookData) {
+        res.status(404).json({
+          message: 'No book found with this id',
+        });
+        return;
+      }
+      res.json(dbBookData);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
 module.exports = router;
