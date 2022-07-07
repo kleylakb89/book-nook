@@ -1,8 +1,21 @@
 <div class="wrapper">
+    <div class="scifi_card ">
+      <div class="card_left">
+        <div class="card_datails genre_title">
+            <p class="disc">{{name}}</p>
+        <div class="social-btn">
+          <a href="/genres/{{id}}"><button>
+              <i class="view-book fas fa-play"></i> View All Books in this Genre
+            </button></a>
+        </div>	
+        </div>
+      </div>
+    </div>
+    
+    {{!-- <div class="wrapper">
   <div class="scifi_card">
     <div class="card_left">
       <div class="card_datails">
-        {{!-- <h1>{{title}}</h1> --}}
         <h1>{{name}}</h1>
 
         <div class="card_cat">
@@ -16,27 +29,13 @@
           <a href="/genres/{{id}}"><button>
               <i class="view-book fas fa-play"></i> View All Books in this Genre
             </button></a>
-
-          <button>
-            <i class="fas fa-download favorite-book"></i> Add Favorite
-          </button>
-          {{#if has_read}}
-          <button>
-            <i class="fas fa-thumbs-up"></i> I've Read This
-          </button>
-          {{else}}
-          <p>TBR</p>
-          {{/if}}
-
         </div>
       </div>
     </div>
     <div class="card_right">
       <div class="img_container">
-        {{!-- <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1415397166l/1719846.jpg"
-          alt=""> --}}
       </div>
 
     </div>
   </div>
-</div>
+</div> --}}
