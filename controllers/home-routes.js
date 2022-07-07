@@ -11,6 +11,7 @@ router.get('/', (req, res) => {
     res.render('home', {
       style: 'all-books.css',
       loggedIn: req.session.loggedIn,
+      mainPage: true,
     });
   }
 });
@@ -23,6 +24,7 @@ router.get('/add', (req, res) => {
     res.render('add-book', {
       style: 'all-books.css',
       loggedIn: req.session.loggedIn,
+      mainPage: true,
     });
   }
 });
@@ -36,6 +38,7 @@ router.get('/login', (req, res) => {
 
   res.render('login',{
     style: 'login.css',
+    mainPage: false,
   });
 });
 
@@ -59,6 +62,7 @@ router.get('/genres', withAuth, (req, res) => {
       genres,
       style: 'all-books.css',
       loggedIn: req.session.loggedIn,
+      mainPage: true,
     });
   })
   .catch((err) => {
@@ -90,6 +94,7 @@ router.get('/genres/:genre_id', withAuth, (req, res) => {
         books,
         style: 'all-books.css',
         loggedIn: req.session.loggedIn,
+        mainPage: true,
       });
     })
     .catch((err) => {
@@ -140,6 +145,7 @@ router.get('/books', (req, res) => {
         books,
         style: 'all-books.css',
         loggedIn: req.session.loggedIn,
+        mainPage: true,
       });
     })
     .catch((err) => {
@@ -187,6 +193,7 @@ router.get('/favorites', (req, res) => {
         books,
         style: 'all-books.css',
         loggedIn: req.session.loggedIn,
+        mainPage: true,
       });
     })
     .catch((err) => {
@@ -245,6 +252,7 @@ router.get('/books/:id', (req, res) => {
         book,
         style: 'all-books.css',
         loggedIn: req.session.loggedIn,
+        mainPage: true,
       });
     })
     .catch((err) => {
