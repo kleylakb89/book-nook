@@ -16,6 +16,12 @@ const genreData = [
   {
     name: 'Sci-fi',
   },
+  {
+    name: 'Non-Fiction',
+  },
+  {
+    name: 'Literary Fiction',
+  },
 ];
 
 const seedGenre = () => Genre.bulkCreate(genreData);
