@@ -34,6 +34,7 @@ router.get('/:genre_id', withAuth, (req, res) => {
 
       res.render('genre', {
         books,
+        style: 'all-books.css',
         loggedIn: req.session.loggedIn,
       });
     })
