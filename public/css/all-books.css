@@ -202,6 +202,210 @@ header {
   opacity: 0;
 }
 
+#nav4:before {
+  content: "View All Books";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background: rgb(192, 185, 102);
+  font-size: 28px;
+  top: 0;
+  left: 100%;
+  font-family: sans-serif;
+  letter-spacing: 5px;
+  transition: all 1s;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transform: scale(0) rotatey(0);
+  opacity: 0;
+}
+
+#nav4:hover:before {
+  transform: scale(1) rotatey(360deg);
+  left: 0;
+  opacity: 1;
+}
+#nav5:hover:before {
+  transform: scale(1) rotatey(360deg);
+  left: 0;
+  opacity: 1;
+}
+
+
+#nav4:after {
+  content: "View All Books";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background: rgb(192, 185, 102);
+  font-size: 28px;
+  top: 0;
+  left: 0;
+  font-family: sans-serif;
+  letter-spacing: 5px;
+  transition: all 1s;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transform: scale(1) rotatey(0);
+  opacity: 1;
+}
+#nav4:hover:after {
+  transform: scale(0) rotatey(360deg);
+  left: -100%;
+  opacity: 0;
+}
+#nav5:hover:after {
+  transform: scale(0) rotatey(360deg);
+  left: -100%;
+  opacity: 0;
+}
+
+#nav5:before {
+  content: "View All Genres";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background: rgb(192, 185, 102);
+  font-size: 28px;
+  top: 0;
+  left: 100%;
+  font-family: sans-serif;
+  letter-spacing: 5px;
+  transition: all 1s;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transform: scale(0) rotatey(0);
+  opacity: 0;
+}
+
+#nav5:after {
+  content: "View All Genres";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background: rgb(192, 185, 102);
+  font-size: 28px;
+  top: 0;
+  left: 0;
+  font-family: sans-serif;
+  letter-spacing: 5px;
+  transition: all 1s;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transform: scale(1) rotatey(0);
+  opacity: 1;
+}
+#nav6:before {
+  content: "View All Favorites";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background: rgb(192, 185, 102);
+  font-size: 28px;
+  top: 0;
+  left: 100%;
+  font-family: sans-serif;
+  letter-spacing: 5px;
+  transition: all 1s;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transform: scale(0) rotatey(0);
+  opacity: 0;
+}
+
+#nav6:hover:before {
+  transform: scale(1) rotatey(360deg);
+  left: 0;
+  opacity: 1;
+}
+#nav6:after {
+  content: "View All Favorites";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background: rgb(192, 185, 102);
+  font-size: 28px;
+  top: 0;
+  left: 0;
+  font-family: sans-serif;
+  letter-spacing: 5px;
+  transition: all 1s;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transform: scale(1) rotatey(0);
+  opacity: 1;
+}
+#nav6:hover:after {
+  transform: scale(0) rotatey(360deg);
+  left: -100%;
+  opacity: 0;
+}
+#nav7:before {
+  content: "Add Book";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background: rgb(192, 185, 102);
+  font-size: 28px;
+  top: 0;
+  left: 100%;
+  font-family: sans-serif;
+  letter-spacing: 5px;
+  transition: all 1s;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transform: scale(0) rotatey(0);
+  opacity: 0;
+}
+
+#nav7:hover:before {
+  transform: scale(1) rotatey(360deg);
+  left: 0;
+  opacity: 1;
+}
+#nav7:after {
+  content: "Add Book";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background: rgb(192, 185, 102);
+  font-size: 28px;
+  top: 0;
+  left: 0;
+  font-family: sans-serif;
+  letter-spacing: 5px;
+  transition: all 1s;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transform: scale(1) rotatey(0);
+  opacity: 1;
+}
+#nav7:hover:after {
+  transform: scale(0) rotatey(360deg);
+  left: -100%;
+  opacity: 0;
+}
+
+/* .homenav{
+	margin: 0 auto ;
+
+} */
 
 
 
