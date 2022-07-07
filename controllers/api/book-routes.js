@@ -4,7 +4,7 @@ const { Book, Genre, Review, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 //add a book
 router.post('/', withAuth, (req, res) => {
-  console.log('creating');
+  console.log(req.body.has_read, req.body.favorite, req.body.genre_id);
   Book.create({
     title: req.body.title,
     author: req.body.author,
@@ -13,7 +13,7 @@ router.post('/', withAuth, (req, res) => {
     user_id: req.session.user_id,
     genre_id: req.body.genre_id
   })
-  .then((dbBookData) => req.json(dbBookData))
+  .then((dbBookData) => res.json(dbBookData))
   .catch((err) => {
     console.log(err);
     res.status(500).json(err);

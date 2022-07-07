@@ -9,7 +9,19 @@ router.get('/', (req, res) => {
     res.redirect('login');
   } else {
     res.render('home', {
-      style: 'login.css',
+      style: 'all-books.css',
+      loggedIn: req.session.loggedIn,
+    });
+  }
+});
+
+router.get('/add', (req, res) => {
+  // res.render('home')
+  if (!req.session.loggedIn) {
+    res.redirect('login');
+  } else {
+    res.render('add-book', {
+      style: 'all-books.css',
       loggedIn: req.session.loggedIn,
     });
   }
