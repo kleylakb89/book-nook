@@ -11,4 +11,6 @@ const viewBook = async (event) => {
   console.log(response);
 };
 
-selectedBook.addEventListener('click', viewBook);
+if (selectedBook) {
+  selectedBook.addEventListener('click', viewBook);
+}
