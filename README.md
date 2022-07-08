@@ -14,7 +14,9 @@
 Welcome to BookNook! A digital library where a user can add books to their library to keep track of as well as add them to a favorites list and mark them as read whenever they finish that book. 
 
 ## Visuals
-
+![Login Page](./public/images/BookNook.png)
+![Home Page](./public/images/BookNook1.png)
+![Add A Book Page](./public/images/BookNook2.png)
 ## Technologies Used
 - Open library API
 - ISBNDB API
@@ -71,4 +73,4 @@ Questions, comments or concerns? Feel free to reach out to any of us by email:
 
 ## Resources
 - [Repo Link](https://github.com/kleylakb89/book-nook)
-- [Live Site]()
+- [Live Site](https://dry-bastion-57106.herokuapp.com/)
