@@ -1,3 +1,4 @@
+// A file for initializing the database without need to run mysql -u root
 const mysql = require('mysql2/promise');
 require('dotenv').config();
 

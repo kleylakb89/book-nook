@@ -2,12 +2,14 @@ const signUpButton = document.getElementById('signUp');
 const signInButton = document.getElementById('signIn');
 const container = document.getElementById('container');
 
+// function for logging in
 const loginFormHandler = async (event) => {
   event.preventDefault();
 
   const email = document.querySelector('#email-login').value.trim();
   const password = document.querySelector('#password-login').value.trim();
 
+  // checks if email and password exist, then sends the request to login
   if (email && password) {
     const response = await fetch('/api/users/login', {
       method: 'POST',
@@ -23,6 +25,7 @@ const loginFormHandler = async (event) => {
   }
 };
 
+// function for signing up a new user
 const signupHandler = async (event) => {
   event.preventDefault();
 

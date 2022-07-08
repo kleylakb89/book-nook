@@ -1,3 +1,4 @@
+// book seed data
 const { Book } = require('../models');
 
 const bookData = [

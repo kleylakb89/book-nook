@@ -1,7 +1,7 @@
 // require('dotenv').config();
 let submitBook = document.querySelector('.submit-book');
 
-
+// function to add a book to the database
 const addBook = async (event) => {
   event.preventDefault();
 
@@ -10,46 +10,33 @@ const addBook = async (event) => {
   const genre_id = document.querySelector('#genres').value;
   const read = document.querySelector('#has-read');
   const fav = document.querySelector('#favorite');
-  // let cover ='';
-  // let isbn ='';
+
   let has_read = false;
   let favorite = false;
 
+  // checking checkbox value and setting boolean based on it
   if (read.checked) {
     has_read = true;
   }
   if (fav.checked) {
     favorite = true;
   }
+  // headers for the api fetch
   let headers = {
     'Content-Type': 'application/json',
     'Authorization': '48085_86d037bcde037a43fbe855f18b47d51e'
   };
 
+  // fetching the isbn to use for finding the book cover
   const bookResult = await fetch(`https://api2.isbndb.com/books/${title}?page=1&pageSize=20&column=title`, {
     headers: headers,
   });
   const data = await bookResult.json();
-  console.log(data);
   const isbn = data.books[0].isbn13;
 
-  console.log(isbn);
-
   const cover = `https://covers.openlibrary.org/b/isbn/${isbn}-M.jpg`;
-  // const cover = await bookResult.json();
-  // console.log(cover);
 
-  // const bookResult = await fetch('/api/books/search', {
-  //   method: 'POST',
-  //   body: JSON.stringify({
-  //     isbn
-  //   }),
-  //   headers: {'Content-Type': 'application/json',},
-  // });
-  // const cover = new Image();
-  // cover.src = 'data:image/png;base64,' + await bookResult.json();
-  // console.log(cover);
-
+  // fetch request to post the new book
   const response = await fetch('/api/books', {
     method: 'POST',
     body: JSON.stringify({

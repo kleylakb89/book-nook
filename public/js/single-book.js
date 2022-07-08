@@ -1,5 +1,6 @@
 let selectedBook = document.querySelector('.view-book');
 
+// function for viewing a specific book
 const viewBook = async (event) => {
   event.preventDefault();
   const id = window.location.pathname;

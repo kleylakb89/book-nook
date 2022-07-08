@@ -1,3 +1,4 @@
+// review seed data
 const { Review } = require('../models');
 
 const reviewData = [

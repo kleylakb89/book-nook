@@ -1,10 +1,9 @@
+// model for books in database
 const { Model, DataTypes } = require('sequelize');
-
 const sequelize = require('../config/connection.js');
 
 class Book extends Model {}
 
-// book info
 Book.init(
   {
     id: {

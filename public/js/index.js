@@ -1,5 +1,6 @@
 const search = document.querySelector('#search');
 
+// function for searching a book
 const libraryGet = async (event) => {
   event.preventDefault();
   const response = await fetch('/api/books/search', {

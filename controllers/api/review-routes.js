@@ -1,17 +1,19 @@
+// file for review backend - currently unused
 const router = require('express').Router();
-const { Book, Genre, Review, User } = require('../../models');
+const { Review } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 //create a review
-router.post('/', withAuth, (req, res) => {
-  console.log('creating');
-  Review.create({
-    rating: req.body.rating,
-    text: req.body.text,
-    user_id: req.session.user_id,
-    book_id: req.body.book_id
-  })
-})
+// router.post('/', withAuth, (req, res) => {
+//   console.log('creating');
+//   Review.create({
+//     rating: req.body.rating,
+//     text: req.body.text,
+//     user_id: req.session.user_id,
+//     book_id: req.body.book_id
+//   });
+// });
+
 //update a review//
 router.put('./:id', withAuth, (req, res) => {
   Review.update({
@@ -68,11 +70,5 @@ router.get('/', withAuth, (req, res) => {
       res.status(500).json(err);
     });
 });
-
-
-
-
-
-
 
 module.exports = router;

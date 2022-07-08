@@ -1,5 +1,6 @@
 let readBook = document.querySelector('#read-book');
 
+// function for updating if a book has been read
 const hasReadBook = async (event) => {
   event.preventDefault();
 

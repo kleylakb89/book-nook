@@ -1,8 +1,8 @@
+// requiring dependencies
 const router = require('express').Router();
-const { Book, Genre, Review, User } = require('../../models');
+const { User } = require('../../models');
 
 //create a user and log in
-
 router.post('/', (req, res) => {
   User.create({
     username: req.body.username,
@@ -26,8 +26,7 @@ router.post('/', (req, res) => {
     });
 });
 
-
-
+// login with existing user
 router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({
@@ -72,6 +71,5 @@ router.post('/logout', (req, res) => {
     res.status(404).end();
   }
 });
-
 
 module.exports = router;

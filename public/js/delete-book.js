@@ -1,6 +1,6 @@
 let deletedBook = document.querySelector('#delete-book');
 
-
+// function for deleting a book
 const deleteBook = async (event) => {
   event.preventDefault();
   const id = window.location.pathname;

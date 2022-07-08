@@ -1,15 +1,17 @@
-<header class = "sticky">
-        <h1 class="headh1">Your Library</h1>
-        <div class="navdiv">
-          <a href="/" class="nav" id="nav1"></a>
-          <a href="#" class="nav" id="nav2"></a>
-          <a href="/books" class="nav" id="nav4"></a>
-          <a href="/genres" class="nav" id="nav5"></a>
-          <a href="/favorites" class="nav" id="nav6"></a>
-          <a href="/add" class="nav" id="nav7"></a>
-        </div>
-      </header>
+{{!-- handlebars for viewing by genre --}}
+<header class="sticky">
+  <h1 class="headh1">Your Library</h1>
+  <div class="navdiv">
+    <a href="/" class="nav" id="nav1"></a>
+    <a href="#" class="nav" id="nav2"></a>
+    <a href="/books" class="nav" id="nav4"></a>
+    <a href="/genres" class="nav" id="nav5"></a>
+    <a href="/favorites" class="nav" id="nav6"></a>
+    <a href="/add" class="nav" id="nav7"></a>
+  </div>
+</header>
 
+{{!-- uses a partial --}}
 {{#each books as |book|}}
 {{> genre-book-details}}
 {{/each}}

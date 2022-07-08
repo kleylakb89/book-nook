@@ -1,13 +1,13 @@
+{{!-- handlebars for viewing a single book --}}
 <div class="wrapper">
   <div class="scifi_card">
     <div class="card_left">
       <div class="card_datails">
         <h1>{{book.title}}</h1>
         <div class="card_cat">
-
           <p class="author">{{book.author}}</p>
-          {{!-- <p class="genre">Sci-Fi</p> --}}
         </div>
+        {{!-- uses if statements to display specific buttons --}}
         {{#if book.favorite}}
         <button>
           <i class="fas fa-download"></i> In Favorites!
@@ -34,16 +34,16 @@
       </div>
     </div>
 
-  <div class="card_right">
-    <div class="img_container">
-      {{#if book.cover}}
-      <img src="{{book.cover}}" alt="{{book.title}}">
-      {{else}}
-      <img src="https://via.placeholder.com/400.png?text={{book.title}}" alt="{{book.title}}">
-      {{/if}}
+    <div class="card_right">
+      <div class="img_container">
+        {{#if book.cover}}
+        <img src="{{book.cover}}" alt="{{book.title}}">
+        {{else}}
+        <img src="https://via.placeholder.com/400.png?text={{book.title}}" alt="{{book.title}}">
+        {{/if}}
+      </div>
     </div>
 
-  </div>
   </div>
 
 </div>

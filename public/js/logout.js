@@ -1,5 +1,6 @@
 const logout = document.querySelector('#nav2');
 
+// function for logging out user
 const logoutHandler = async () => {
   const response = await fetch('/api/users/logout', {
     method: 'POST',

@@ -4,6 +4,7 @@ const Book = require('./Book');
 const Genre = require('./Genre');
 const Review = require('./Review');
 
+// building the relationships between the models
 User.hasMany(Book, {
   foreignKey: 'user_id',
 });
@@ -11,10 +12,6 @@ User.hasMany(Book, {
 Book.belongsTo(User, {
   foreignKey: 'user_id',
 });
-
-// Genre.hasMany(Book, {
-//   foreignKey: 'genre_id',
-// });
 
 Book.belongsTo(Genre, {
   foreignKey: 'genre_id',

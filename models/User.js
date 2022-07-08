@@ -1,14 +1,15 @@
+// model for users in database
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection.js');
 const bcrypt = require('bcrypt');
 
+// encrypting user passwords
 class User extends Model {
   checkPassword(loginPw) {
     return bcrypt.compareSync(loginPw, this.password);
   }
 }
 
-// user
 User.init(
   {
     id: {
