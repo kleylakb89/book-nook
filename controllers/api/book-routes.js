@@ -1,7 +1,8 @@
+// requiring dependencies
 const router = require('express').Router();
-const { default: axios } = require('axios');
-const { Book, Genre, Review, User } = require('../../models');
+const { Book } = require('../../models');
 const withAuth = require('../../utils/auth');
+
 //add a book
 router.post('/', withAuth, (req, res) => {
   console.log(req.body.has_read, req.body.favorite, req.body.genre_id);
@@ -43,83 +44,7 @@ router.delete('/:id', withAuth, (req, res) => {
     });
 });
 
-// view all books
-// router.get('/', withAuth, (req, res) => {
-//   Book.findAll()
-//     .then((dbBookData) => res.json(dbBookData))
-//     .catch((err) => {
-//       console.log(err);
-//       res.status(500).json(err);
-//     });
-// });
-
-//update a book
-
-// router.post('/search', (req, res) => {
-//   const title = req.body.title;
-//   axios({
-//     method: 'get',
-//     url: `https://openlibrary.org/api/books?bibkeys=title:${title}&jscmd=details&format=json`,
-//     responseType: 'json',
-//   }).then(({ data }) => {
-//     if (data.length && data[`title:${title}`].details.isbn_13[0]) {
-//       const isbn = data[`title:${title}`].details.isbn_13[0];
-//       res.send(`https://covers.openlibrary.org/b/isbn/${isbn}-M.jpg`);
-//     } else {
-//       res.json(null);
-//     }
-//   });
-// });
-// router.post('/search', (req, res) => {
-//   const isbn = 9780747532743;
-//   // const isbn = req.body.isbn;
-//   axios({
-//     method: 'get',
-//     url: `https://covers.openlibrary.org/b/isbn/${isbn}-M.jpg`,
-//     responseType: 'json',
-//   }).then(({ data }) => {
-//     console.log(data);
-//     res.send(data);
-    // if (data.length && data[`title:${title}`].details.isbn_13[0]) {
-    //   const isbn = data[`title:${title}`].details.isbn_13[0];
-    //   res.send(`https://covers.openlibrary.org/b/isbn/${isbn}-M.jpg`);
-    // } else {
-    //   res.json(null);
-    // }
-//   });
-// });
-// router.post('/search', (req, res) => {
-//   const title = req.body.title;
-//   axios({
-//     method: 'get',
-//     url: `https://api2.isbndb.com/books/${title}?page=1&pageSize=20&column=title`,
-//     responseType: 'json',
-//   }).then(({ data }) => {
-//     console.log(data);
-//     if (data.length && data[`title:${title}`].details.isbn_13[0]) {
-//       const isbn = data[`title:${title}`].details.isbn_13[0];
-//       res.send(`https://covers.openlibrary.org/b/isbn/${isbn}-M.jpg`);
-//     } else {
-//       res.json(null);
-//     }
-//   });
-// });
-
-// router.get('/cover', (req, res) => {
-//   axios({
-//     method: 'get',
-//     url: 'https://api.lorem.space/image/book?w=150&h=220',
-//     responseType: 'json',
-//   }).then(({ data }) => {
-//     if (data.length && data[`title:${title}`].details.isbn_13[0]) {
-//       const isbn = data[`title:${title}`].details.isbn_13[0];
-//       res.send(`https://covers.openlibrary.org/b/isbn/${isbn}-M.jpg`);
-//     } else {
-//       res.send(false);
-//     }
-//   });
-// });
-
+// update if a book has been read
 router.put('/:id', withAuth, (req, res) => {
   Book.update(
     {

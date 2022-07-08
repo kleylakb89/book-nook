@@ -1,3 +1,4 @@
+// genre seed data
 const { Genre } = require('../models');
 
 const genreData = [

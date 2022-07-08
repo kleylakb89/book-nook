@@ -1,3 +1,4 @@
+// file to route different paths and files
 const router = require('express').Router();
 const bookRoutes = require('./book-routes');
 const genreRoutes = require('./genre-routes');

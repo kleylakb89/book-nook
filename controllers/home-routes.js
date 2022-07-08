@@ -1,9 +1,10 @@
+// requiring dependencies
 const router = require('express').Router();
 const { Book, Review, User, Genre } = require('../models');
 const withAuth = require('../utils/auth');
 
+// redirects to login if not logged in, otherwise renders the home view
 router.get('/', (req, res) => {
-  // res.render('home')
   if (!req.session.loggedIn) {
     res.redirect('login');
   } else {
@@ -15,8 +16,8 @@ router.get('/', (req, res) => {
   }
 });
 
+// renders the add-book view
 router.get('/add', (req, res) => {
-  // res.render('home')
   if (!req.session.loggedIn) {
     res.redirect('login');
   } else {
@@ -28,25 +29,19 @@ router.get('/add', (req, res) => {
   }
 });
 
+// if logged in, redirects to home, otherwise renders login view
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
     res.redirect('/');
     return;
   }
-
   res.render('login', {
     style: 'login.css',
     mainPage: false,
   });
 });
 
-// router.get('*', (req, res) => {
-//   res.status(404).send('Can\'t go there!');
-// });
-
-//need a single-book handlebars
-//extra comment
-
+// renders all genres view
 router.get('/genres', withAuth, (req, res) => {
   Genre.findAll()
     .then((dbGenreData) => {
@@ -69,6 +64,7 @@ router.get('/genres', withAuth, (req, res) => {
     });
 });
 
+// renders all books in a genre
 router.get('/genres/:genre_id', withAuth, (req, res) => {
   Book.findAll({
     where: {
@@ -102,6 +98,7 @@ router.get('/genres/:genre_id', withAuth, (req, res) => {
     });
 });
 
+// renders all books in a user's library
 router.get('/books', (req, res) => {
   Book.findAll({
     where: {
@@ -157,7 +154,7 @@ router.get('/books', (req, res) => {
     });
 });
 
-// get favorites
+// renders all user's favorites
 router.get('/favorites', (req, res) => {
   Book.findAll({
     where: {
@@ -200,8 +197,7 @@ router.get('/favorites', (req, res) => {
     });
 });
 
-//view a single book
-
+// renders a single book
 router.get('/books/:id', (req, res) => {
   Book.findOne({
     where: {
@@ -215,7 +211,6 @@ router.get('/books/:id', (req, res) => {
       'cover',
       'has_read',
       'favorite',
-      // user_id
     ],
     include: [
       {
@@ -261,6 +256,7 @@ router.get('/books/:id', (req, res) => {
     });
 });
 
+// updates if a book is favorited
 router.put('/books/:id', withAuth, (req, res) => {
   Book.update(
     {

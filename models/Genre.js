@@ -1,10 +1,9 @@
+// model for genres in database
 const { Model, DataTypes } = require('sequelize');
-
 const sequelize = require('../config/connection.js');
 
 class Genre extends Model {}
 
-// genre
 Genre.init(
   {
     id: {

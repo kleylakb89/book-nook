@@ -1,3 +1,4 @@
+// file to use npm run seed to seed database
 const seedBook = require('./bookData');
 const seedGenre = require('./genreData');
 const seedReview = require('./reviewData');

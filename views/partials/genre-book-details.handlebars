@@ -1,34 +1,25 @@
-{{!-- <a href="/books/{{id}}">{{title}}</a>
-<p>{{author}}</p> --}}
-
+{{!-- handlebars for getting the books in a specific genre --}}
 <div class="wrapper">
   <div class="scifi_card">
     <div class="card_left">
       <div class="card_datails">
         <h1>{{title}}</h1>
         <div class="card_cat">
-
           <p class="author">{{author}}</p>
-          {{!-- <p class="genre">Sci-Fi</p> --}}
         </div>
-
-
         <div class="social-btn">
-          <a href="/books/{{id}}"><button>
-              <i class="view-book fas fa-play"></i> View This Book
-            </button></a>
-
-
+          <a href="/books/{{id}}"><button><i class="view-book fas fa-play"></i> View This Book</button></a>
         </div>
       </div>
     </div>
+
     <div class="card_right">
       <div class="img_container">
         {{#if cover}}
-      <img src="{{cover}}" alt="{{title}}">
-      {{else}}
-      <img src="https://via.placeholder.com/400.png?text={{title}}" alt="{{title}}">
-      {{/if}}
+        <img src="{{cover}}" alt="{{title}}">
+        {{else}}
+        <img src="https://via.placeholder.com/400.png?text={{title}}" alt="{{title}}">
+        {{/if}}
       </div>
 
     </div>

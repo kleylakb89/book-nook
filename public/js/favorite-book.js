@@ -1,5 +1,6 @@
 let favoriteBook = document.querySelector('#favorite-book');
 
+// function for updating when user wants to favorite a book
 const favBook = async (event) => {
   event.preventDefault();
 
