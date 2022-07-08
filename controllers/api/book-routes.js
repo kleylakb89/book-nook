@@ -1,11 +1,12 @@
 // requiring dependencies
+require('dotenv').config();
 const router = require('express').Router();
+const axios = require('axios');
 const { Book } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 //add a book
 router.post('/', withAuth, (req, res) => {
-  console.log(req.body.has_read, req.body.favorite, req.body.genre_id);
   Book.create({
     title: req.body.title,
     author: req.body.author,
@@ -69,6 +70,28 @@ router.put('/:id', withAuth, (req, res) => {
       console.log(err);
       res.status(500).json(err);
     });
+});
+
+router.post('/isbn', async (req, res) => {
+  try {
+    const { title } = req.body;
+    const requestURL = `https://api2.isbndb.com/books/${title}?page=1&pageSize=20&column=title`;
+    
+    // headers for the api fetch
+    const options = {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': process.env.AUTH
+      }
+    };
+
+    // fetching the isbn to use for finding the book cover
+    const { data } = await axios.get(requestURL, options);
+    res.status(200).send(data.books[0].isbn13);
+  } catch(err) {
+    res.status(500).json(err);
+  }
+
 });
 
 module.exports = router;

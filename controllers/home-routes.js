@@ -183,7 +183,6 @@ router.get('/favorites', (req, res) => {
           plain: true,
         })
       );
-      console.log(books);
       res.render('favorites', {
         books,
         style: 'all-books.css',

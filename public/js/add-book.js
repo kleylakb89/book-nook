@@ -1,4 +1,3 @@
-// require('dotenv').config();
 let submitBook = document.querySelector('.submit-book');
 
 // function to add a book to the database
@@ -21,18 +20,14 @@ const addBook = async (event) => {
   if (fav.checked) {
     favorite = true;
   }
-  // headers for the api fetch
-  let headers = {
-    'Content-Type': 'application/json',
-    'Authorization': '48085_86d037bcde037a43fbe855f18b47d51e'
-  };
 
   // fetching the isbn to use for finding the book cover
-  const bookResult = await fetch(`https://api2.isbndb.com/books/${title}?page=1&pageSize=20&column=title`, {
-    headers: headers,
+  const bookResult = await fetch('/api/books/isbn', {
+    method: 'POST',
+    body: JSON.stringify({ title }),
+    headers: { 'Content-Type': 'application/json' },
   });
-  const data = await bookResult.json();
-  const isbn = data.books[0].isbn13;
+  const isbn = await bookResult.text();
 
   const cover = `https://covers.openlibrary.org/b/isbn/${isbn}-M.jpg`;
 
@@ -47,7 +42,7 @@ const addBook = async (event) => {
       cover,
       genre_id,
     }),
-    headers: {'Content-Type': 'application/json',},
+    headers: { 'Content-Type': 'application/json' },
   });
   if(response.ok) {
     document.location.replace('/books');
