@@ -446,13 +446,11 @@ header {
   text-align: center;
 }
 
-.scifi_card {
+.scifi_card, .house_card {
   color: #fff;
   width: 760px;
   height: 390px;
   margin: 50px auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   max-width: 770px;
   background: #00C9FF;
@@ -783,6 +781,10 @@ a.ssolink {
   padding-top: 15px;
 }
 
+img {
+  border-left: 4px solid rgb(192, 185, 102);
+}
+
 @media screen and (max-width: 800px) {
 
   /* logo takes center of top of screen on small displays */
@@ -795,9 +797,22 @@ a.ssolink {
   /* articles center and resize larger */
   .scifi_card {
     /* inline-size: min-content; */
-    overflow: hidden;
+    /* overflow: hidden; */
+    overflow-y: scroll;
     margin: 25px auto;
     width: 50%;
+    max-height: 200%;
+    -webkit-box-shadow: none;
+  }
+
+  .house_card {
+    /* inline-size: min-content; */
+    /* overflow: hidden; */
+    overflow-y: scroll;
+    margin: 25px auto;
+    width: 50%;
+    height: 200%;
+    -webkit-box-shadow: none;
   }
   .card_datails{
     width: 50%;
@@ -854,6 +869,9 @@ a.ssolink {
     width: 50%;
   }
   
+  img {
+    display: none;
+  }
 
 }
 
