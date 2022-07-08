@@ -781,7 +781,6 @@ img {
     margin-right:1px;
     width: 50%;
     flex-wrap: wrap;
-
   }
 
  
@@ -842,7 +841,7 @@ img {
     box-shadow: none;
     border: none;
     margin: 10px;
-
+    padding: 20 60;
   }
   #nav6:before{
     content: "View All Faves";
