@@ -292,7 +292,7 @@
       font-size: 35px;
   }
   .container {
-    width: 60%;
+    width: 90%;
 }
   .span{
     font-size: 20px;
@@ -303,6 +303,14 @@
   button{
     font-size: 8px;
     border: 1px solid white;
+    padding: 10px;
 
+  }
+ 
+  input {
+    width: 100px;
+  }
+  form{
+    color: black;
   }
 }
