@@ -1,52 +1,51 @@
-<section>
+<div class="wrapper">
+  <div class="scifi_card">
+    <div class="card_left">
+      <div class="card_datails">
+        <h1>{{book.title}}</h1>
+        <div class="card_cat">
 
-  <div class="wrapper">
-    <div class="scifi_card">
-      <div class="card_left">
-        <div class="card_datails">
-          <h1>{{book.title}}</h1>
-          <div class="card_cat">
-
-            <p class="author">{{book.author}}</p>
-            {{!-- <p class="genre">Sci-Fi</p> --}}
-          </div>
-          {{#if book.favorite}}
-          <button>
-            <i class="fas fa-download"></i> In Favorites!
-          </button>
-          {{else}}
-          <button id="favorite-book">
-            <i class="fas fa-download"></i> Add Favorite
-          </button>
-          {{/if}}
-          {{#if book.has_read}}
-          <button>
-            <i class="fas fa-thumbs-up"></i> I've Read This
-          </button>
-          {{else}}
-          <button id="read-book">
-            <i class="fas fa-thumbs-up"></i> Mark As Read
-          </button>
-          {{/if}}
-          <button id="delete-book">
-            <i class="fas fa-download"></i>
-            Delete From Library
-          </button>
-
+          <p class="author">{{book.author}}</p>
+          {{!-- <p class="genre">Sci-Fi</p> --}}
         </div>
+        {{#if book.favorite}}
+        <button>
+          <i class="fas fa-download"></i> In Favorites!
+        </button>
+        {{else}}
+        <button id="favorite-book">
+          <i class="fas fa-download"></i> Add Favorite
+        </button>
+        {{/if}}
+        {{#if book.has_read}}
+        <button>
+          <i class="fas fa-thumbs-up"></i> I've Read This
+        </button>
+        {{else}}
+        <button id="read-book">
+          <i class="fas fa-thumbs-up"></i> Mark As Read
+        </button>
+        {{/if}}
+        <button id="delete-book">
+          <i class="fas fa-download"></i>
+          Delete From Library
+        </button>
+
       </div>
     </div>
-    <div class="card_right">
-      <div class="img_container">
+
+  <div class="card_right">
+    <div class="img_container">
       {{#if book.cover}}
       <img src="{{book.cover}}" alt="{{book.title}}">
       {{else}}
       <img src="https://via.placeholder.com/400.png?text={{book.title}}" alt="{{book.title}}">
       {{/if}}
-      </div>
-
     </div>
+
   </div>
+  </div>
+
 </div>
 
 {{#if book.favorite}}
