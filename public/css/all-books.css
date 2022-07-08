@@ -17,12 +17,12 @@ header {
   padding-bottom: 2%;
 
 }
-
+/* navigational buttons stick to top of page */
 .sticky {
   position: sticky;
   top: 0;
 }
-
+/* heading styling at the top of every view */
 .headh1 {
   color: black;
   background-color: white;
@@ -33,7 +33,7 @@ header {
 
 
 }
-
+/* begining of navigation buttons styling */
 .navdiv {
   margin-top: 2%;
   display: flex;
@@ -425,7 +425,8 @@ header {
   left: -100%;
   opacity: 0;
 }
-
+/* this is the end of the styling for the navigation buttons  */
+/* and now the card styling begins */
 .genre_card {
   margin: 50px auto;
   text-align: center;
@@ -550,9 +551,9 @@ button:hover {
   transform: scale(1.1);
 }
 
+/* this marks the end of the card styling */
 
-
-
+/* animations for buttons on cards */
 @-webkit-keyframes bounce {
   8% {
     transform: scale(0.3);
@@ -584,7 +585,7 @@ button:hover {
 
 
 
-/* break for form break for form break for form  */
+/* this marks the begining of the form styling */
 
 
 a {
@@ -615,24 +616,6 @@ a {
   flex-direction: column;
 }
 
-/* .box-divider--light-all-2 {
-    box-shadow: inset 0 0 0 2px #e3e8ee;
-}
-.box-background--blue {
-    background-color: #5469d4;
-}
-.box-background--white {
-  background-color: #ffffff; 
-}
-.box-background--blue800 {
-    background-color: #212d63;
-}
-.box-background--gray100 {
-    background-color: #e3e8ee;
-}
-.box-background--cyan200 {
-    background-color: #7fd3ed;
-} */
 .padding-top--64 {
   padding-top: 64px;
 }
@@ -780,21 +763,27 @@ a.ssolink {
 .form_padding {
   padding-top: 15px;
 }
+/* this marks the end of the form styling */
 
+
+/* this img styling is for our book covers being brought into  */
+/* multiple views from our api */
 img {
   border-left: 4px solid rgb(192, 185, 102);
 }
 
+/* from here all the way to the end handles our interactive display */
+/* for when the viewport changes size */
 @media screen and (max-width: 800px) {
 
-  /* logo takes center of top of screen on small displays */
+
   .navdiv {
     display: block;
     width: 50%;
 
   }
 
-  /* articles center and resize larger */
+ 
   .scifi_card {
     /* inline-size: min-content; */
     /* overflow: hidden; */
@@ -875,30 +864,3 @@ img {
 
 }
 
-/* @media screen and (max-width: 500px) {
-
-  .navdiv {
-
-    width: 10%;
-
-  }
-
-  .scifi_card {
-    display: inline-flex;
-    justify-content: flex-end;
-    margin-left: 70%;
-    width: 50%;
-  }
-
-
-} */
-
-/* @media screen and (max-width: 1400px) {
-  h1 {
-      margin: 10px auto;
-      transform: translate(0, 0);
-  }
-  .past-search, .clear-button {
-      width: 30%;
-  }
-} */
