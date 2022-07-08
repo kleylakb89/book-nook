@@ -1,3 +1,5 @@
+{{!-- our card template injecting properties from the book model --}}
+{{!-- such as the title of the specified book title, author, id and book cover --}}
 <div class="wrapper">
   <div class="scifi_card">
     <div class="card_left">
@@ -9,7 +11,7 @@
           {{!-- <p class="genre">Sci-Fi</p> --}}
         </div>
 
-
+{{!-- by usin the book id this button will bring to a page viewing the specied book clicked  --}}
         <div class="social-btn">
           <a href="/books/{{id}}"><button>
               <i class="view-book fas fa-play"></i> View This Book
@@ -18,6 +20,7 @@
         </div>
       </div>
     </div>
+    {{!-- displays book cover on card but if no cover exists a placeholder image will appear --}}
     <div class="card_right">
       <div class="img_container">
         {{#if cover}}
