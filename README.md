@@ -66,7 +66,8 @@ Questions, comments or concerns? Feel free to reach out to any of us by email:
 - Ben: bashworthj@gmail.com
 - Cody: cody.theroux3@gmail.com
 - Kristen: clever_disguises@yahoo.com
-- Nick:
+- Nick: thompsonnickolas1@gmail.com
+
 
 ## Resources
 - [Repo Link](https://github.com/kleylakb89/book-nook)
