@@ -721,6 +721,7 @@ input[type="submit"] {
   color: #fff;
   font-weight: 600;
   cursor: pointer;
+  border-radius: 20px;
 }
 
 .add_class {
@@ -775,7 +776,7 @@ a.ssolink {
 /* this img styling is for our book covers being brought into  */
 /* multiple views from our api */
 img {
-  border-left: 4px solid rgb(192, 185, 102);
+  border-left: 4px solid rgb(238, 233, 182);
 }
 
 /* from here all the way to the end handles our interactive display */
@@ -830,7 +831,8 @@ img {
     border: 1px solid white;
     background-color: rgb(98, 46, 46);
     border-radius: 5%;
-
+    padding-left: 4px;
+    padding-right: 4px;
   }
 
   #nav1:after,
@@ -846,7 +848,8 @@ img {
     padding: 1px;
     background-color: rgb(98, 46, 46);
     border-radius: 5%;
-
+    padding-left: 4px;
+    padding-right: 4px;
 
 
   }
@@ -857,11 +860,25 @@ img {
     margin: 10px;
     padding: 20 60;
   }
+  #nav4:before{
+    content: "Books";
+  }
+  #nav4:after{
+    content: "Books";
+
+  }
+  #nav5:before{
+    content: "Genres";
+  }
+  #nav5:after{
+    content: "Genres";
+
+  }
   #nav6:before{
-    content: "View All Faves";
+    content: "Faves";
   }
   #nav6:after{
-    content: "View All Faves";
+    content: "Faves";
 
   }
   .hamburger{

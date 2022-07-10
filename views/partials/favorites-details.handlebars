@@ -1,4 +1,4 @@
-{{!-- this opperates identicall to book-details handlebars  --}}
+{{!-- this opperates identicall to book-details handlebars --}}
 {{!-- the only differnce is this is a view the user can see if they have --}}
 {{!-- attributed the value of is a favorite to the desired book --}}
 
@@ -12,24 +12,30 @@
           <p class="author">{{author}}</p>
         </div>
 
+        <div class="mobile-img">
+          {{#if cover}}
+          <img src="{{cover}}" alt="{{title}}">
+          {{else}}
+          <img src="https://via.placeholder.com/400.png?text={{title}}" alt="{{title}}">
+          {{/if}}
+        </div>
 
         <div class="social-btn">
           <a href="/books/{{id}}"><button>
               <i class="view-book fas fa-play"></i> View This Book
             </button></a>
-        
+
 
         </div>
       </div>
     </div>
     <div class="card_right">
       <div class="img_container">
-       {{#if cover}}
-        <img src="{{cover}}"
-          alt="{{title}}">
-          {{else}}
-          <img src="https://via.placeholder.com/400.png?text={{title}}" alt="{{title}}">
-          {{/if}}
+        {{#if cover}}
+        <img src="{{cover}}" alt="{{title}}">
+        {{else}}
+        <img src="https://via.placeholder.com/400.png?text={{title}}" alt="{{title}}">
+        {{/if}}
       </div>
 
     </div>
