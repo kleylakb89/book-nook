@@ -425,6 +425,10 @@ header {
   left: -100%;
   opacity: 0;
 }
+
+.hamburger{
+  display: none;
+}
 /* this is the end of the styling for the navigation buttons  */
 /* and now the card styling begins */
 .genre_card {
@@ -442,10 +446,15 @@ header {
   text-align: center;
 }
 
+.mobile-img{
+  display: none;
+}
+
 .about_book {
   font-size: 18px;
   text-align: center;
 }
+
 
 .scifi_card, .house_card {
   color: #fff;
@@ -460,13 +469,10 @@ header {
   background: -webkit-linear-gradient(left, black, #b6bcf4);
   background: -o-linear-gradient(left, black, #b6bcf4);
   background: linear-gradient(to right, black, #b6bcf4);
-  -webkit-box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
-  box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
 }
 
 .card_left {
   width: 90%;
-  box-shadow: 25px 20px 20px rgba(0, 0, 0, 0.5);
 }
 
 img {
@@ -778,10 +784,10 @@ img {
 
 
   .navdiv {
-    margin-right:1px;
-    width: 50%;
-    flex-wrap: wrap;
-
+    /* margin-right:1px; */
+    width: 10%;
+    justify-content: space-between;
+    display: none;
   }
 
  
@@ -790,7 +796,7 @@ img {
     /* overflow: hidden; */
     overflow-y: scroll;
     margin: 25px auto;
-    width: 50%;
+    width: 80%;
     max-height: 200%;
     -webkit-box-shadow: none;
   }
@@ -821,7 +827,10 @@ img {
     width: 30%;
     font-size: 15px;
     box-shadow: 25px 20px 20px rgba(0, 0, 0, 0.3);
-    border: 2px solid rgb(192, 192, 165);
+    border: 1px solid white;
+    background-color: rgb(98, 46, 46);
+    border-radius: 5%;
+
   }
 
   #nav1:after,
@@ -833,8 +842,12 @@ img {
     width: 30%;
     font-size: 12px;
     box-shadow: 25px 20px 20px rgba(0, 0, 0, 0.3);
-    border: 2px solid rgb(192, 192, 165);
+    border: 1px solid white;
     padding: 1px;
+    background-color: rgb(98, 46, 46);
+    border-radius: 5%;
+
+
 
   }
   .nav{
@@ -851,6 +864,30 @@ img {
     content: "View All Faves";
 
   }
+  .hamburger{
+    border-radius: 20px;
+    border: 2px solid white;
+    background-color: rgb(98, 46, 46);
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+    display: block;
+    margin: 0 auto;
+  }
+  .show-menu{
+    display: block;
+
+    /* margin: 0 auto; */
+
+  }
+  .hide-menu{
+    display: none;
+  }
+
   .genre_title{
     font-size: 35px;
     text-align: center;
@@ -861,8 +898,12 @@ img {
     width: 80%;
   }
   
-  img {
+  .card_right {
     display: none;
+    /* flex-wrap: wrap; */
+  }
+  .mobile-img{
+    display: block;
   }
 
 }
