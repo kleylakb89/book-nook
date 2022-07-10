@@ -7,6 +7,14 @@
         <div class="card_cat">
           <p class="author">{{book.author}}</p>
         </div>
+        <div class="mobile-img">
+        {{#if book.cover}}
+        <img src="{{book.cover}}"
+          alt="{{book.title}}">
+          {{else}}
+          <img src="https://via.placeholder.com/400.png?text={{book.title}}" alt="{{book.title}}">
+          {{/if}}
+      </div>
         {{!-- uses if statements to display specific buttons --}}
         {{#if book.favorite}}
         <button>
