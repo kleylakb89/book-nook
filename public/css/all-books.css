@@ -855,7 +855,7 @@ img {
     box-shadow: none;
     border: none;
     margin: 10px;
-
+    padding: 20 60;
   }
   #nav6:before{
     content: "View All Faves";
