@@ -10,6 +10,14 @@
           <p class="author">{{author}}</p>
           {{!-- <p class="genre">Sci-Fi</p> --}}
         </div>
+         <div class="mobile-img">
+        {{#if cover}}
+        <img src="{{cover}}"
+          alt="{{title}}">
+          {{else}}
+          <img src="https://via.placeholder.com/400.png?text={{title}}" alt="{{title}}">
+          {{/if}}
+      </div>
 
 {{!-- by usin the book id this button will bring to a page viewing the specied book clicked  --}}
         <div class="social-btn">
@@ -33,4 +41,6 @@
 
     </div>
   </div>
+ 
+
 </div>
