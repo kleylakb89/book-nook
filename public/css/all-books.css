@@ -27,7 +27,7 @@ header {
   color: black;
   background-color: white;
   padding-bottom: 2%;
-  text-shadow: 25px 20px 20px rgba(0, 0, 0, 0.5);
+  text-shadow: 25px 20px 20px rgba(0, 0, 0, 0.4);
   border-bottom: 4px solid black;
 
 
@@ -35,7 +35,7 @@ header {
 }
 /* begining of navigation buttons styling */
 .navdiv {
-  margin-top: 2%;
+  margin-top: -2%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,7 +46,6 @@ header {
 
 .nav {
   text-decoration: none;
-  border: 2px solid rgb(192, 192, 165);
   color: transparent;
   padding: 24px 120px;
   font-size: 20px;
@@ -57,40 +56,9 @@ header {
   margin-right: 8px;
   position: sticky;
   top: 0;
-  box-shadow: 25px 20px 20px rgba(0, 0, 0, 0.25);
+  box-shadow: 25px 40px 20px rgba(0, 0, 0, 0.3);
 }
 
-#nav1:before {
-  content: "Home";
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  background: rgb(192, 185, 102);
-  font-size: 20px;
-  top: 0;
-  left: 100%;
-  font-family: sans-serif;
-  letter-spacing: .1rem;
-  transition: all .3s;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  transform: scale(0) rotatey(0);
-  opacity: 0;
-}
-
-#nav1:hover:before {
-  transform: scale(1) rotatey(360deg);
-  left: 0;
-  opacity: 1;
-}
-
-#nav2:hover:before {
-  transform: scale(1) rotatey(360deg);
-  left: 0;
-  opacity: 1;
-}
 
 
 #nav1:after {
@@ -99,51 +67,30 @@ header {
   justify-content: center;
   align-items: center;
   color: white;
-  background: rgb(192, 185, 102);
+  background: rgb(98, 46, 46);
   font-size: 20px;
   top: 0;
   left: 0;
   font-family: sans-serif;
   letter-spacing: .1rem;
   transition: all .3s;
-  height: 100%;
+  height: 150%;
   width: 100%;
   position: absolute;
-  transform: scale(1) rotatey(0);
   opacity: 1;
 }
-
-#nav1:hover:after {
-  transform: scale(0) rotatey(360deg);
-  left: -100%;
-  opacity: 0;
+#nav1:hover:after,
+#nav2:hover:after,
+#nav4:hover:after,
+#nav5:hover:after,
+#nav6:hover:after,
+#nav7:hover:after{
+  color: black;
+  background: rgb(186, 206, 206);
+  text-decoration: underline rgb(244, 226, 125);
+  text-underline-offset: 5px;
 }
 
-#nav2:hover:after {
-  transform: scale(0) rotatey(360deg);
-  left: -100%;
-  opacity: 0;
-}
-
-#nav2:before {
-  content: "Logout";
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  background: rgb(192, 185, 102);
-  font-size: 20px;
-  top: 0;
-  left: 100%;
-  font-family: sans-serif;
-  letter-spacing: .1rem;
-  transition: all .3s;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  transform: scale(0) rotatey(0);
-  opacity: 0;
-}
 
 #nav2:after {
   content: "Logout";
@@ -151,104 +98,18 @@ header {
   justify-content: center;
   align-items: center;
   color: white;
-  background: rgb(192, 185, 102);
+  background: rgb(98, 46, 46);
   font-size: 20px;
   top: 0;
   left: 0;
   font-family: sans-serif;
   letter-spacing: .1rem;
   transition: all .3s;
-  height: 100%;
+  height: 150%;
   width: 100%;
   position: absolute;
-  transform: scale(1) rotatey(0);
   opacity: 1;
 }
-
-#nav3:before {
-  content: "Add a Book";
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  background: rgb(192, 185, 102);
-  font-size: 20px;
-  top: 0;
-  left: 100%;
-  font-family: sans-serif;
-  letter-spacing: .1rem;
-  transition: all .3s;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  transform: scale(0) rotatey(0);
-  opacity: 0;
-}
-
-#nav3:hover:before {
-  transform: scale(1) rotatey(360deg);
-  left: 0;
-  opacity: 1;
-}
-
-#nav3:after {
-  content: "Add a Book";
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  background: rgb(192, 185, 102);
-  font-size: 20px;
-  top: 0;
-  left: 0;
-  font-family: sans-serif;
-  letter-spacing: .1rem;
-  transition: all .3s;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  transform: scale(1) rotatey(0);
-  opacity: 1;
-}
-
-#nav3:hover:after {
-  transform: scale(0) rotatey(360deg);
-  left: -100%;
-  opacity: 0;
-}
-
-#nav4:before {
-  content: "View All Books";
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  background: rgb(192, 185, 102);
-  font-size: 20px;
-  top: 0;
-  left: 100%;
-  font-family: sans-serif;
-  letter-spacing: .1rem;
-  transition: all .3s;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  transform: scale(0) rotatey(0);
-  opacity: 0;
-}
-
-#nav4:hover:before {
-  transform: scale(1) rotatey(360deg);
-  left: 0;
-  opacity: 1;
-}
-
-#nav5:hover:before {
-  transform: scale(1) rotatey(360deg);
-  left: 0;
-  opacity: 1;
-}
-
 
 #nav4:after {
   content: "View All Books";
@@ -256,50 +117,17 @@ header {
   justify-content: center;
   align-items: center;
   color: white;
-  background: rgb(192, 185, 102);
+  background: rgb(98, 46, 46);
   font-size: 20px;
   top: 0;
   left: 0;
   font-family: sans-serif;
   letter-spacing: .1rem;
   transition: all .3s;
-  height: 100%;
+  height: 150%;
   width: 100%;
   position: absolute;
-  transform: scale(1) rotatey(0);
   opacity: 1;
-}
-
-#nav4:hover:after {
-  transform: scale(0) rotatey(360deg);
-  left: -100%;
-  opacity: 0;
-}
-
-#nav5:hover:after {
-  transform: scale(0) rotatey(360deg);
-  left: -100%;
-  opacity: 0;
-}
-
-#nav5:before {
-  content: "View All Genres";
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  background: rgb(192, 185, 102);
-  font-size: 20px;
-  top: 0;
-  left: 100%;
-  font-family: sans-serif;
-  letter-spacing: .1rem;
-  transition: all .3s;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  transform: scale(0) rotatey(0);
-  opacity: 0;
 }
 
 #nav5:after {
@@ -308,43 +136,16 @@ header {
   justify-content: center;
   align-items: center;
   color: white;
-  background: rgb(192, 185, 102);
+  background: rgb(98, 46, 46);
   font-size: 20px;
   top: 0;
   left: 0;
   font-family: sans-serif;
   letter-spacing: .1rem;
   transition: all .3s;
-  height: 100%;
+  height: 150%;
   width: 100%;
   position: absolute;
-  transform: scale(1) rotatey(0);
-  opacity: 1;
-}
-
-#nav6:before {
-  content: "View All Favorites";
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  background: rgb(192, 185, 102);
-  font-size: 20px;
-  top: 0;
-  left: 100%;
-  font-family: sans-serif;
-  letter-spacing: .1rem;
-  transition: all .3s;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  transform: scale(0) rotatey(0);
-  opacity: 0;
-}
-
-#nav6:hover:before {
-  transform: scale(1) rotatey(360deg);
-  left: 0;
   opacity: 1;
 }
 
@@ -354,49 +155,16 @@ header {
   justify-content: center;
   align-items: center;
   color: white;
-  background: rgb(192, 185, 102);
+  background: rgb(98, 46, 46);
   font-size: 20px;
   top: 0;
   left: 0;
   font-family: sans-serif;
   letter-spacing: .1rem;
   transition: all .3s;
-  height: 100%;
+  height: 150%;
   width: 100%;
   position: absolute;
-  transform: scale(1) rotatey(0);
-  opacity: 1;
-}
-
-#nav6:hover:after {
-  transform: scale(0) rotatey(360deg);
-  left: -100%;
-  opacity: 0;
-}
-
-#nav7:before {
-  content: "Add Book";
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  background: rgb(192, 185, 102);
-  font-size: 20px;
-  top: 0;
-  left: 100%;
-  font-family: sans-serif;
-  letter-spacing: .1rem;
-  transition: all .3s;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  transform: scale(0) rotatey(0);
-  opacity: 0;
-}
-
-#nav7:hover:before {
-  transform: scale(1) rotatey(360deg);
-  left: 0;
   opacity: 1;
 }
 
@@ -406,24 +174,18 @@ header {
   justify-content: center;
   align-items: center;
   color: white;
-  background: rgb(192, 185, 102);
+  background: rgb(98, 46, 46);
+
   font-size: 20px;
   top: 0;
   left: 0;
   font-family: sans-serif;
   letter-spacing: .1rem;
   transition: all .3s;
-  height: 100%;
+  height: 150%;
   width: 100%;
   position: absolute;
-  transform: scale(1) rotatey(0);
   opacity: 1;
-}
-
-#nav7:hover:after {
-  transform: scale(0) rotatey(360deg);
-  left: -100%;
-  opacity: 0;
 }
 
 .hamburger{
@@ -457,19 +219,19 @@ header {
 
 
 .scifi_card, .house_card {
-  color: #fff;
+  justify-content: center;
+  text-align: center;
+  color: white;
   width: 760px;
   height: 390px;
   margin: 50px auto;
   display: flex;
   max-width: 770px;
-  background: #00C9FF;
-  background: -webkit-linear-gradient(to right, black, #b6bcf4);
-  background: -webkit-gradient(linear, left top, right top, from(#92FE9D), to(#f1a84f));
-  background: -webkit-linear-gradient(left, black, #b6bcf4);
-  background: -o-linear-gradient(left, black, #b6bcf4);
-  background: linear-gradient(to right, black, #b6bcf4);
+  background:rgb(6, 48, 48);
+  border: 8px solid rgb(243, 243, 222);
+ 
 }
+
 
 .card_left {
   width: 90%;
@@ -485,9 +247,7 @@ img {
   margin-top: -25px;
 }
 
-.card_datails h1 {
-  font-size: 30px;
-}
+
 
 .card_right img {
   height: 390px;
@@ -516,9 +276,20 @@ img {
   font-weight: bold;
   border-radius: 15px;
 }
-
+.home-tit{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 50px;
+}
 
 .disc {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 70px;
+  font-weight: 600;
+  line-height: 27px;
+}
+.home-bio {
+  letter-spacing: .25rem;
+  font-size: 25px;
   font-weight: 100;
   line-height: 27px;
 }
@@ -534,6 +305,7 @@ a {
 }
 
 button {
+  width: 100%;
   color: #fff;
   border: none;
   padding: 20px;
@@ -653,10 +425,11 @@ a {
 }
 
 .formbg {
+  border: 10px solid rgb(186, 206, 206);
   margin: 0px auto;
   width: 100%;
   max-width: 448px;
-  background: white;
+  background: rgb(249, 248, 247);
   border-radius: 4px;
   box-shadow: rgba(60, 66, 87, 0.12) 0px 7px 14px 0px, rgba(0, 0, 0, 0.12) 0px 3px 6px 0px;
 }
@@ -723,6 +496,21 @@ input[type="submit"] {
   cursor: pointer;
   border-radius: 20px;
 }
+input[type="submit"]:hover {
+  background-color: rgb(186, 206, 206);
+  box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+    rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+    rgba(0, 0, 0, 0.12) 0px 1px 1px 0px,
+    rgb(98, 46, 46) 0px 0px 0px 1px,
+    rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+    rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+    rgba(60, 66, 87, 0.08) 0px 2px 5px 0px;
+  color: black;
+  text-decoration: underline 3px rgb(244, 226, 125);
+  text-underline-offset: 5px;
+}
+
+
 
 .add_class {
   font-size: 25px;
